@@ -9,6 +9,7 @@ import type { Sequelize, QueryOptions, QueryOptionsWithType, QueryTypes } from "
 import {EquipmentModel} from "@interfaces/models/equipment.interface";
 import {EquipmentImageModel} from "@interfaces/models/equipment-image.interface";
 import {VehiclePhotoModel} from "@interfaces/models/vehicle-photo.interface";
+import {StoreModel} from "@interfaces/models/strore.interface";
 
 export interface Models {
     AdminServer: AdminServerModel
@@ -21,6 +22,7 @@ export interface Models {
     Equipment: EquipmentModel
     EquipmentImage: EquipmentImageModel
     VehiclePhoto: VehiclePhotoModel
+    Store: StoreModel
 }
 
 export interface Db {
