@@ -1,12 +1,12 @@
-import type { BrandImageInstance, BrandImageModel } from "@interfaces/models/brand-image.interface"
+import type { EquipmentImageInstance, EquipmentImageModel } from "@interfaces/models/equipment-image.interface"
 import type Sequelize from "sequelize"
 
-export const BrandImage = (
+export const EquipmentImage = (
     sequelize: Sequelize.Sequelize,
     DataTypes: typeof Sequelize.DataTypes
-): BrandImageModel => {
-    const model: Sequelize.ModelStatic<BrandImageInstance> = sequelize.define<BrandImageInstance>(
-        "brand_image",
+): EquipmentImageModel => {
+    const model: Sequelize.ModelStatic<EquipmentImageInstance> = sequelize.define<EquipmentImageInstance>(
+        "equipment_image",
         {
             id: {
                 primaryKey: true,
@@ -14,7 +14,7 @@ export const BrandImage = (
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            brand_id: {
+            equipment_id: {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
@@ -28,8 +28,8 @@ export const BrandImage = (
             updatedAt: "updated_at",
             scopes: {
                 list: {
-                    attributes: ["id","brand_id", "image"]
-        }
+                    attributes: ["id","equipment_id", "image"]
+                }
     )
 
     return model

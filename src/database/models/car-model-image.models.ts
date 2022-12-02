@@ -18,7 +18,7 @@ export const CarModelImage = (
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            name: {
+            image: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
@@ -28,7 +28,7 @@ export const CarModelImage = (
             updatedAt: "updated_at",
             scopes: {
                 list: {
-                    attributes: ["id","car_model_id", "name"]
+                    attributes: ["id","car_model_id", "image"]
                 }
     )
 

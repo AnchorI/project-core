@@ -3,7 +3,7 @@ import type { Model, ModelStatic, Optional } from "sequelize"
 
 
 export interface BrandImageAttributes extends BaseAttributes {
-    name: string
+    image: string
     brand_id: number
 
 }

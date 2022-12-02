@@ -18,7 +18,7 @@ export const GenerationImage = (
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            name: {
+            image: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
@@ -28,7 +28,7 @@ export const GenerationImage = (
             updatedAt: "updated_at",
             scopes: {
                 list: {
-                    attributes: ["id","generation_id", "name"]
+                    attributes: ["id","generation_id", "image"]
                 }
     )
 
