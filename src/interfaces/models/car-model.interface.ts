@@ -4,7 +4,8 @@ import type { Model, ModelStatic, Optional } from "sequelize"
 
 export interface CarModelAttributes extends BaseAttributes {
     name: string
-
+    brand_id: number
+    description: string
 }
 
 export interface CarModelCreationAttributes

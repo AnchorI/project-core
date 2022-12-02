@@ -6,6 +6,7 @@ import type {CarModelImageModel} from "@interfaces/models/car-model-image.interf
 import type {GenerationModel} from "@interfaces/models/generation.interface";
 import type {GenerationImageModel} from "@interfaces/models/generation-image.interface";
 import type { Sequelize, QueryOptions, QueryOptionsWithType, QueryTypes } from "sequelize"
+import {EquipmentModel} from "@interfaces/models/equipment.interface";
 
 export interface Models {
     AdminServer: AdminServerModel
@@ -15,6 +16,7 @@ export interface Models {
     CarModelIMage: CarModelImageModel
     Generation: GenerationModel
     GenerationImage: GenerationImageModel
+    Equipment: EquipmentModel
 }
 
 export interface Db {

@@ -4,7 +4,7 @@ import type { Model, ModelStatic, Optional } from "sequelize"
 
 export interface CarModelImageAttributes extends BaseAttributes {
     name: string
-
+    car_model_id: number
 }
 
 export interface CarModelImageCreationAttributes

@@ -4,7 +4,13 @@ import type { Model, ModelStatic, Optional } from "sequelize"
 
 export interface GenerationAttributes extends BaseAttributes {
     name: string
-
+    car_model_id: number
+    year_start: number
+    year_end: number
+    height: number
+    widht: number
+    lenght: number
+    description: string
 }
 
 export interface GenerationCreationAttributes

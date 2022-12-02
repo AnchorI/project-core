@@ -69,7 +69,8 @@ const DB: Db = {
         CarModel: Models.CarModel(sequelize, Sequelize.DataTypes),
         CarModelIMage: Models.CarModelImage(sequelize, Sequelize.DataTypes),
         Generation: Models.Generation(sequelize, Sequelize.DataTypes),
-        GenerationImage: Models.GenerationImage(sequelize, Sequelize.DataTypes)
+        GenerationImage: Models.GenerationImage(sequelize, Sequelize.DataTypes),
+        Equipment: Models.Equipment(sequelize, Sequelize.DataTypes)
     }
 }
 

@@ -6,7 +6,7 @@ export const CarModelImage = (
     DataTypes: typeof Sequelize.DataTypes
 ): CarModelImageModel => {
     const model: Sequelize.ModelStatic<CarModelImageInstance> = sequelize.define<CarModelImageInstance>(
-        "brand_image",
+        "car_model_image",
         {
             id: {
                 primaryKey: true,

@@ -4,6 +4,7 @@ import type { Model, ModelStatic, Optional } from "sequelize"
 
 export interface GenerationImageAttributes extends BaseAttributes {
     name: string
+    generation_id: number
 
 }
 

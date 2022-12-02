@@ -1,12 +1,12 @@
-import type { GenerationInstance, GenerationModel } from "@interfaces/models/generation.interface"
+import type { EquipmentInstance, EquipmentModel } from "@interfaces/models/equipment.interface"
 import type Sequelize from "sequelize"
 
-export const Generation = (
+export const Equipment = (
     sequelize: Sequelize.Sequelize,
     DataTypes: typeof Sequelize.DataTypes
-): GenerationModel => {
-    const model: Sequelize.ModelStatic<GenerationInstance> = sequelize.define<GenerationInstance>(
-        "generation",
+): EquipmentModel => {
+    const model: Sequelize.ModelStatic<EquipmentInstance> = sequelize.define<EquipmentInstance>(
+        "equipment",
         {
             id: {
                 primaryKey: true,
@@ -14,36 +14,35 @@ export const Generation = (
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            car_model_id: {
+            generation_id: {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
             name: {
                 type: DataTypes.STRING,
                 allowNull: false
-
-            },
-            year_start: {
-                type: DataTypes.INTEGER,
-                allowNull: false
-            },
-            year_end: {
-                type: DataTypes.INTEGER,
-                allowNull: false
-            },
-            height: {
-                type: DataTypes.INTEGER,
-                allowNull: false
-            },
-            widht: {
-                type: DataTypes.INTEGER,
-                allowNull: false
-            },
-            lenght: {
-                type: DataTypes.INTEGER,
-                allowNull: false
             },
             description: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            start_price: {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            },
+            top_speed: {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            },
+            acceleration_0_100: {
+                type: DataTypes.FLOAT,
+                allowNull: false
+            },
+            range: {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            },
+            transmission: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
@@ -53,7 +52,7 @@ export const Generation = (
             updatedAt: "updated_at",
             scopes: {
                 list: {
-                    attributes: ["id", "car_model_id", "name", "year_start", "year_end", "height", "widht", "lenght", "description"]
+                    attributes: ["id", "generation_id", "description", "start_price", "top_speed", "acceleration_0_100", "range", "transmission"]
                 },
             }
         }

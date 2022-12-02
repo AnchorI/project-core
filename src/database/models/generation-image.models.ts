@@ -6,7 +6,7 @@ export const GenerationImage = (
     DataTypes: typeof Sequelize.DataTypes
 ): GenerationImageModel => {
     const model: Sequelize.ModelStatic<GenerationImageInstance> = sequelize.define<GenerationImageInstance>(
-        "brand_image",
+        "generation_image",
         {
             id: {
                 primaryKey: true,
