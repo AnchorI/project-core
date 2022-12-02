@@ -2,6 +2,7 @@ import type { AdminServerModel } from "@interfaces/models/admin-server.interface
 import type {BrandModel} from "@interfaces/models/brand.interface";
 import {CarModelModel} from "@interfaces/models/car-model.interface";
 import {BrandImageModel} from "@interfaces/models/brand-image.interface";
+import {CarModelImageModel} from "@interfaces/models/car-model-image.interface";
 import type { Sequelize, QueryOptions, QueryOptionsWithType, QueryTypes } from "sequelize"
 
 export interface Models {
@@ -9,6 +10,7 @@ export interface Models {
     Brand: BrandModel
     BrandImage: BrandImageModel
     CarModel: CarModelModel
+    CarModelIMage: CarModelImageModel
 }
 
 export interface Db {
