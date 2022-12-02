@@ -24,36 +24,9 @@ export const Brand = (
             createdAt: "created_at",
             updatedAt: "updated_at",
             scopes: {
-                list: {
-                    attributes: ["id", "name", "host", "ip", "disabled", "role", "api_key"]
+                attributes: ["id", "name"]
                 },
-                edit: {
-                    attributes: ["id", "name", "host", "disabled", "role", "api_key"]
-                },
-                short: {
-                    attributes: ["id", "name"]
-                }
-            },
-            indexes: [
-                {
-                    fields: ["api_key"],
-                    name: "index_admin_servers_on_api_key",
-                    using: "BTREE"
-                },
-                {
-                    fields: ["host"],
-                    name: "index_admin_servers_on_host",
-                    using: "BTREE"
-                },
-                {
-                    fields: ["name"],
-                    name: "index_admin_servers_on_name",
-                    using: "BTREE"
-                },
-                {
-                    fields: ["role"],
-                    name: "index_admin_servers_on_role",
-                    using: "BTREE"
+
                 }
             ]
         }
