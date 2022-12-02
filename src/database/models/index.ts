@@ -7,4 +7,5 @@ export { Generation } from "./generation.models"
 export { GenerationImage } from "./generation-image.models"
 export { Equipment } from "./equipment.models"
 export { EquipmentImage } from "./equipment-image.models"
+export { VehiclePhoto } from "./vehicle-photo.models"
 
