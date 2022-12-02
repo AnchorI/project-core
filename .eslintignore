@@ -1,0 +1,7 @@
+gulpfile.js
+ecosystem.config.js
+ecosystem.db.config.js
+jest.after.ts
+jest.before.ts
+jest.config.ts
+lint-staged.config.js
