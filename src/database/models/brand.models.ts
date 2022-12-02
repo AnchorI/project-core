@@ -24,12 +24,13 @@ export const Brand = (
             createdAt: "created_at",
             updatedAt: "updated_at",
             scopes: {
-                attributes: ["id", "name"]
-                    }
+                list: {
+                    attributes: ["id", "name"]
                 },
-
-            ]
+            }
         }
+
+
     )
 
     return model
