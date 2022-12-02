@@ -5,14 +5,12 @@ import type { Model, ModelStatic, Optional } from "sequelize"
 export interface BrandImageAttributes extends BaseAttributes {
     image: string
     brand_id: number
-
 }
 
-export interface BrandImageCreationAttributes
-    extends Optional<BrandImageAttributes, "id" | "created_at" | "updated_at"> {}
+export type BrandImageCreationAttributes = Optional<BrandImageAttributes, "id" | "created_at" | "updated_at">
 
 export interface BrandImageInstance
     extends Model<BrandImageAttributes, BrandImageCreationAttributes>,
         BrandImageAttributes {}
 
-export interface BrandImageModel extends ModelStatic<BrandImageInstance> {}
+export type BrandImageModel = ModelStatic<BrandImageInstance>

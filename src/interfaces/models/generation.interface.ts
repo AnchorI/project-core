@@ -8,16 +8,15 @@ export interface GenerationAttributes extends BaseAttributes {
     year_start: number
     year_end: number
     height: number
-    widht: number
-    lenght: number
+    width: number
+    length: number
     description: string
 }
 
-export interface GenerationCreationAttributes
-    extends Optional<GenerationAttributes, "id" | "created_at" | "updated_at"> {}
+export type GenerationCreationAttributes = Optional<GenerationAttributes, "id" | "created_at" | "updated_at">
 
 export interface GenerationInstance
     extends Model<GenerationAttributes, GenerationCreationAttributes>,
         GenerationAttributes {}
 
-export interface GenerationModel extends ModelStatic<GenerationInstance> {}
+export type GenerationModel = ModelStatic<GenerationInstance>

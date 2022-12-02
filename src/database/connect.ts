@@ -65,9 +65,9 @@ const DB: Db = {
     models: {
         AdminServer: Models.AdminServers(sequelize, Sequelize.DataTypes),
         Brand: Models.Brand(sequelize, Sequelize.DataTypes),
-        BrandImage: Models.BrandImages(sequelize, Sequelize.DataTypes),
+        BrandImage: Models.BrandImage(sequelize, Sequelize.DataTypes),
         CarModel: Models.CarModel(sequelize, Sequelize.DataTypes),
-        CarModelIMage: Models.CarModelImage(sequelize, Sequelize.DataTypes),
+        CarModelImage: Models.CarModelImage(sequelize, Sequelize.DataTypes),
         Generation: Models.Generation(sequelize, Sequelize.DataTypes),
         GenerationImage: Models.GenerationImage(sequelize, Sequelize.DataTypes),
         Equipment: Models.Equipment(sequelize, Sequelize.DataTypes),

@@ -15,7 +15,7 @@ export interface Models {
     Brand: BrandModel
     BrandImage: BrandImageModel
     CarModel: CarModelModel
-    CarModelIMage: CarModelImageModel
+    CarModelImage: CarModelImageModel
     Generation: GenerationModel
     GenerationImage: GenerationImageModel
     Equipment: EquipmentModel

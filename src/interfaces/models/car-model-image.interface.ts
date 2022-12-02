@@ -7,11 +7,10 @@ export interface CarModelImageAttributes extends BaseAttributes {
     car_model_id: number
 }
 
-export interface CarModelImageCreationAttributes
-    extends Optional<CarModelImageAttributes, "id" | "created_at" | "updated_at"> {}
+export type CarModelImageCreationAttributes = Optional<CarModelImageAttributes, "id" | "created_at" | "updated_at">
 
 export interface CarModelImageInstance
     extends Model<CarModelImageAttributes, CarModelImageCreationAttributes>,
         CarModelImageAttributes {}
 
-export interface CarModelImageModel extends ModelStatic<CarModelImageInstance> {}
+export type CarModelImageModel = ModelStatic<CarModelImageInstance>

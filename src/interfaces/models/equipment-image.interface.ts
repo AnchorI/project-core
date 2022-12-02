@@ -8,11 +8,10 @@ export interface EquipmentImageAttributes extends BaseAttributes {
 
 }
 
-export interface EquipmentImageCreationAttributes
-    extends Optional<EquipmentImageAttributes, "id" | "created_at" | "updated_at"> {}
+export type EquipmentImageCreationAttributes = Optional<EquipmentImageAttributes, "id" | "created_at" | "updated_at">
 
 export interface EquipmentImageInstance
     extends Model<EquipmentImageAttributes, EquipmentImageCreationAttributes>,
         EquipmentImageAttributes {}
 
-export interface EquipmentImageModel extends ModelStatic<EquipmentImageInstance> {}
+export type EquipmentImageModel = ModelStatic<EquipmentImageInstance>

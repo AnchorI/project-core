@@ -1,4 +1,4 @@
-import type { CarModelInstance, CarModelModel } from "@interfaces/models/car-model-image.interface"
+import type { CarModelInstance, CarModelModel } from "@interfaces/models/car-model.interface"
 import type Sequelize from "sequelize"
 
 export const CarModel = (
@@ -34,6 +34,8 @@ export const CarModel = (
                 list: {
                     attributes: ["id", "brand_id", "name", "descripton"]
                 }
+            }
+        }
     )
 
     return model

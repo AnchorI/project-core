@@ -28,8 +28,10 @@ export const VehiclePhoto = (
             updatedAt: "updated_at",
             scopes: {
                 list: {
-                    attributes: ["id","vehicle_id", "image"]
+                    attributes: ["id", "vehicle_id", "image"]
                 }
+            }
+        }
     )
 
     return model

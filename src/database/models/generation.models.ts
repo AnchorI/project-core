@@ -35,11 +35,11 @@ export const Generation = (
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            widht: {
+            width: {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            lenght: {
+            length: {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
@@ -54,7 +54,7 @@ export const Generation = (
             scopes: {
                 list: {
                     attributes: ["id", "car_model_id", "name", "year_start", "year_end", "height", "widht", "lenght", "description"]
-                },
+                }
             }
         }
 

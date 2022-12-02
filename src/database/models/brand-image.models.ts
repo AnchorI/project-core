@@ -28,7 +28,9 @@ export const BrandImage = (
             updatedAt: "updated_at",
             scopes: {
                 list: {
-                    attributes: ["id","brand_id", "image"]
+                    attributes: ["id", "brand_id", "image"]
+                }
+            }
         }
     )
 

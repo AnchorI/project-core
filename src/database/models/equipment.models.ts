@@ -53,7 +53,7 @@ export const Equipment = (
             scopes: {
                 list: {
                     attributes: ["id", "generation_id", "description", "start_price", "top_speed", "acceleration_0_100", "range", "transmission"]
-                },
+                }
             }
         }
 

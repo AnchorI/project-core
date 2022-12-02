@@ -11,14 +11,12 @@ export interface EquipmentAttributes extends BaseAttributes {
     acceleration_0_100: number
     range: number
     transmission: string
-
 }
 
-export interface EquipmentCreationAttributes
-    extends Optional<EquipmentAttributes, "id" | "created_at" | "updated_at"> {}
+export type EquipmentCreationAttributes = Optional<EquipmentAttributes, "id" | "created_at" | "updated_at">
 
 export interface EquipmentInstance
     extends Model<EquipmentAttributes, EquipmentCreationAttributes>,
         EquipmentAttributes {}
 
-export interface EquipmentModel extends ModelStatic<EquipmentInstance> {}
+export type EquipmentModel = ModelStatic<EquipmentInstance>

@@ -8,11 +8,10 @@ export interface GenerationImageAttributes extends BaseAttributes {
 
 }
 
-export interface GenerationImageCreationAttributes
-    extends Optional<GenerationImageAttributes, "id" | "created_at" | "updated_at"> {}
+export type GenerationImageCreationAttributes = Optional<GenerationImageAttributes, "id" | "created_at" | "updated_at">
 
 export interface GenerationImageInstance
     extends Model<GenerationImageAttributes, GenerationImageCreationAttributes>,
         GenerationImageAttributes {}
 
-export interface GenerationImageModel extends ModelStatic<GenerationImageInstance> {}
+export type GenerationImageModel = ModelStatic<GenerationImageInstance>

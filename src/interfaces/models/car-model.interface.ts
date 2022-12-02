@@ -8,11 +8,10 @@ export interface CarModelAttributes extends BaseAttributes {
     description: string
 }
 
-export interface CarModelCreationAttributes
-    extends Optional<CarModelAttributes, "id" | "created_at" | "updated_at"> {}
+export type CarModelCreationAttributes = Optional<CarModelAttributes, "id" | "created_at" | "updated_at">
 
 export interface CarModelInstance
     extends Model<CarModelAttributes, CarModelCreationAttributes>,
         CarModelAttributes {}
 
-export interface CarModelModel extends ModelStatic<CarModelInstance> {}
+export type CarModelModel = ModelStatic<CarModelInstance>

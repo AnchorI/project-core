@@ -8,11 +8,10 @@ export interface VehiclePhotoAttributes extends BaseAttributes {
 
 }
 
-export interface VehiclePhotoCreationAttributes
-    extends Optional<VehiclePhotoAttributes, "id" | "created_at" | "updated_at"> {}
+export type VehiclePhotoCreationAttributes = Optional<VehiclePhotoAttributes, "id" | "created_at" | "updated_at">
 
 export interface VehiclePhotoInstance
     extends Model<VehiclePhotoAttributes, VehiclePhotoCreationAttributes>,
         VehiclePhotoAttributes {}
 
-export interface VehiclePhotoModel extends ModelStatic<VehiclePhotoInstance> {}
+export type VehiclePhotoModel = ModelStatic<VehiclePhotoInstance>

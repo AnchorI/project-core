@@ -1,4 +1,4 @@
-import type { GenerationImageInstance, GenerationImageModel } from "@interfaces/models/generation-image.interface.interface"
+import type { GenerationImageInstance, GenerationImageModel } from "@interfaces/models/generation-image.interface"
 import type Sequelize from "sequelize"
 
 export const GenerationImage = (
@@ -28,8 +28,10 @@ export const GenerationImage = (
             updatedAt: "updated_at",
             scopes: {
                 list: {
-                    attributes: ["id","generation_id", "image"]
+                    attributes: ["id", "generation_id", "image"]
                 }
+            }
+        }
     )
 
     return model
