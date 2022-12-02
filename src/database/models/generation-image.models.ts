@@ -1,11 +1,11 @@
-import type { CarModelInstance, CarModelModel } from "@interfaces/models/car-model-image.interface"
+import type { GenerationImageInstance, GenerationImageModel } from "@interfaces/models/generation-image.interface.interface"
 import type Sequelize from "sequelize"
 
-export const CarModel = (
+export const GenerationImage = (
     sequelize: Sequelize.Sequelize,
     DataTypes: typeof Sequelize.DataTypes
-): CarModelModel => {
-    const model: Sequelize.ModelStatic<CarModelInstance> = sequelize.define<CarModelInstance>(
+): GenerationImageModel => {
+    const model: Sequelize.ModelStatic<GenerationImageInstance> = sequelize.define<GenerationImageInstance>(
         "brand_image",
         {
             id: {
@@ -14,7 +14,7 @@ export const CarModel = (
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            brand_id: {
+            generation_id: {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
@@ -22,17 +22,13 @@ export const CarModel = (
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            description: {
-                type: DataTypes.STRING,
-                allowNull: false
-            }
         },
         {
             createdAt: "created_at",
             updatedAt: "updated_at",
             scopes: {
                 list: {
-                    attributes: ["id", "brand_id", "name", "descripton"]
+                    attributes: ["id","generation_id", "name"]
                 }
     )
 

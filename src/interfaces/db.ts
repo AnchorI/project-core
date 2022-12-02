@@ -1,8 +1,10 @@
 import type { AdminServerModel } from "@interfaces/models/admin-server.interface"
 import type {BrandModel} from "@interfaces/models/brand.interface";
-import {CarModelModel} from "@interfaces/models/car-model.interface";
-import {BrandImageModel} from "@interfaces/models/brand-image.interface";
-import {CarModelImageModel} from "@interfaces/models/car-model-image.interface";
+import type {CarModelModel} from "@interfaces/models/car-model.interface";
+import type {BrandImageModel} from "@interfaces/models/brand-image.interface";
+import type {CarModelImageModel} from "@interfaces/models/car-model-image.interface";
+import type {GenerationModel} from "@interfaces/models/generation.interface";
+import type {GenerationImageModel} from "@interfaces/models/generation-image.interface";
 import type { Sequelize, QueryOptions, QueryOptionsWithType, QueryTypes } from "sequelize"
 
 export interface Models {
@@ -11,6 +13,8 @@ export interface Models {
     BrandImage: BrandImageModel
     CarModel: CarModelModel
     CarModelIMage: CarModelImageModel
+    Generation: GenerationModel
+    GenerationImage: GenerationImageModel
 }
 
 export interface Db {
