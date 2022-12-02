@@ -25,9 +25,9 @@ export const Brand = (
             updatedAt: "updated_at",
             scopes: {
                 attributes: ["id", "name"]
+                    }
                 },
 
-                }
             ]
         }
     )
