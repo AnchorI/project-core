@@ -4,7 +4,6 @@ module.exports = {
     },
     plugins: ["jest"],
     extends: [
-        "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"
     ],
@@ -16,7 +15,9 @@ module.exports = {
     },
     rules: {
         "jest/no-export": "off",
-        "jest/no-commented-out-tests": "off"
+        "jest/no-commented-out-tests": "off",
+        "ban-ts-comment": "off",
+        "no-empty-interface": "off"
     },
     overrides: [
         {
