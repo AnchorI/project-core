@@ -1,12 +1,14 @@
 import type { AdminServerModel } from "@interfaces/models/admin-server.interface"
 import type {BrandModel} from "@interfaces/models/brand.interface";
+import {CarModelModel} from "@interfaces/models/car-model.interface";
+import {BrandImageModel} from "@interfaces/models/brand-image.interface";
 import type { Sequelize, QueryOptions, QueryOptionsWithType, QueryTypes } from "sequelize"
 
 export interface Models {
     AdminServer: AdminServerModel
     Brand: BrandModel
-
     BrandImage: BrandImageModel
+    CarModel: CarModelModel
 }
 
 export interface Db {
