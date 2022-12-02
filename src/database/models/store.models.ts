@@ -8,6 +8,12 @@ export const Store = (
     const model: Sequelize.ModelStatic<StoreInstance> = sequelize.define<StoreInstance>(
         "store",
         {
+            id: {
+                primaryKey: true,
+                autoIncrement: true,
+                type: DataTypes.INTEGER,
+                allowNull: false
+            },
             brand: {
                 type: DataTypes.INTEGER,
                 allowNull: false
@@ -21,6 +27,10 @@ export const Store = (
                 allowNull: true
             },
             equipment: {
+                type: DataTypes.INTEGER,
+                allowNull: true
+            },
+            price: {
                 type: DataTypes.INTEGER,
                 allowNull: true
             },
@@ -69,6 +79,8 @@ export const Store = (
                 list: {
                     attributes: ["brand", "model", "generation", "equipment", "mileage", "price", "release_year", "stock_category", "color_code", "discount", "quantity", "description", "text", "vehicle_id"]
                 }
+            }
+        }
     )
 
     return model
