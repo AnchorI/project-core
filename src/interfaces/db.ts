@@ -5,6 +5,8 @@ import type { Sequelize, QueryOptions, QueryOptionsWithType, QueryTypes } from "
 export interface Models {
     AdminServer: AdminServerModel
     Brand: BrandModel
+
+    BrandImage: BrandImageModel
 }
 
 export interface Db {

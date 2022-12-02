@@ -63,7 +63,9 @@ if (config.env !== Env.Test) {
 const DB: Db = {
     sequelize, // connection instance (RAW queries)
     models: {
-        AdminServer: Models.AdminServers(sequelize, Sequelize.DataTypes)
+        AdminServer: Models.AdminServers(sequelize, Sequelize.DataTypes),
+        Brand: Models.Brand(sequelize, Sequelize.DataTypes),
+        BrandImage: Models.BrandImages(sequelize, Sequelize.DataTypes)
     }
 }
 
