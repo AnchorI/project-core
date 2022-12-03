@@ -15,4 +15,4 @@ class EquipmentImageRoute implements Routes {
     }
 }
 
-export default new EquipmentImageController().router
+export default new EquipmentImageRoute().router
