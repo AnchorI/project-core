@@ -1,25 +1,25 @@
 import BaseService from "@root/api/service.base";
 import {ListResponse, PaginationProps} from "@interfaces/api";
-import {BrandAttributes} from "@interfaces/models/brand.interface";
+import {EquipmentAttributes} from "@interfaces/models/equipment.interface";
 import {FindAndCountOptions} from "sequelize";
 import {findWithPaginate} from "@helpers/database";
 
-class BrandService extends BaseService {
-    public async getList(pagination: PaginationProps): Promise<ListResponse<BrandAttributes>> {
+class EuipmentService extends BaseService {
+    public async getList(pagination: PaginationProps): Promise<ListResponse<EquipmentAttributes>> {
         const options: FindAndCountOptions = {
             ...pagination,
             include: [
                 {
-                    model: this.models.BrandImage,
-                    as: "brand_images",
+                    model: this.models.EquipmentImage,
+                    as: "equipment_images",
                     attributes: ["id", "image"]
                 }
             ],
             order: [["id", "ASC"]]
         }
 
-        return await findWithPaginate(this.models.Brand.scope("list"), options)
+        return await findWithPaginate(this.models.Equipment.scope("list"), options)
     }
 }
 
-export default BrandService
+export default EuipmentService

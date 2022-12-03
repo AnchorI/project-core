@@ -54,7 +54,7 @@ export const Generation = (
             updatedAt: "updated_at",
             scopes: {
                 list: {
-                    attributes: ["id", "car_model_id", "name", "year_start", "year_end", "height", "widht", "lenght", "description"]
+                    attributes: ["id", "car_model_id", "name", "year_start", "year_end", "height", "width", "length", "description"]
                 }
             }
         }

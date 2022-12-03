@@ -74,7 +74,7 @@ export const Store = (
             updatedAt: "updated_at",
             scopes: {
                 list: {
-                    attributes: ["brand", "model", "generation", "equipment", "mileage", "price", "release_year", "stock_category", "color_code", "discount", "quantity", "description", "text", "vehicle_id"]
+                    attributes: ["brand", "model", "generation", "equipment", "mileage", "price", "release_year", "stock_category", "color_code", "discount", "quantity", "description", "text"]
                 }
             }
         }
@@ -86,6 +86,23 @@ export const Store = (
             foreignKey: "vehicle_id",
             as: "vehicle_images"
         })
+        model.belongsTo(models.Brand, {
+            foreignKey: "brand",
+            as: "brand_store"
+        })
+        model.belongsTo(models.CarModel, {
+            foreignKey: "model",
+            as: "model_store"
+        })
+        model.belongsTo(models.Generation, {
+            foreignKey: "generation",
+            as: "generation_store"
+        })
+        model.belongsTo(models.Equipment, {
+            foreignKey: "equipment",
+            as: "equipment_store"
+        })
+
     }
 
     return model
