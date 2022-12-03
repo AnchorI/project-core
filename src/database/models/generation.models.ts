@@ -1,5 +1,6 @@
 import type { GenerationInstance, GenerationModel } from "@interfaces/models/generation.interface"
 import type Sequelize from "sequelize"
+import {Models} from "@interfaces/db";
 
 export const Generation = (
     sequelize: Sequelize.Sequelize,
@@ -57,9 +58,21 @@ export const Generation = (
                 }
             }
         }
-
-
     )
+
+    model.associate = (models: Models) => {
+        model.hasMany(models.GenerationImage, {
+            sourceKey: "id",
+            foreignKey: "generation_id",
+            as: "generation_images"
+        })
+        model.hasMany(models.Store, {
+            sourceKey: "id",
+            foreignKey: "generation",
+            as: "generation_store"
+        })
+
+    }
 
     return model
 }

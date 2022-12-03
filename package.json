@@ -8,8 +8,7 @@
     "dev": "cross-env NODE_ENV=development nodemon",
     "lint:all": "yarn lint && yarn tscCheck",
     "lint:fix": "eslint src/**/*.ts --fix",
-    "lint": "./node_modules/.bin/eslint ./src --ext .ts  --quiet",
-    "seed:test": "cross-env NODE_ENV=test ts-node --transpile-only --files src/database/seeder.ts"
+    "lint": "./node_modules/.bin/eslint ./src --ext .ts  --quiet"
   },
   "keywords": [],
   "author": "AnchorI",

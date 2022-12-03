@@ -1,5 +1,6 @@
 import type { CarModelInstance, CarModelModel } from "@interfaces/models/car-model.interface"
 import type Sequelize from "sequelize"
+import {Models} from "@interfaces/db";
 
 export const CarModel = (
     sequelize: Sequelize.Sequelize,
@@ -37,6 +38,25 @@ export const CarModel = (
             }
         }
     )
+
+    model.associate = (models: Models) => {
+        model.hasMany(models.CarModelImage, {
+            sourceKey: "id",
+            foreignKey: "car_model_id",
+            as: "model_images"
+        })
+        model.hasMany(models.Store, {
+            sourceKey: "id",
+            foreignKey: "model",
+            as: "model_store"
+        })
+        model.hasMany(models.Generation, {
+            sourceKey: "id",
+            foreignKey: "car_model_id",
+            as: "model_generation"
+        })
+
+    }
 
     return model
 }
