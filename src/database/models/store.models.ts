@@ -1,5 +1,6 @@
 import type { StoreInstance, StoreModel } from "@interfaces/models/strore.interface"
 import type Sequelize from "sequelize"
+import {Models} from "@interfaces/db";
 
 export const Store = (
     sequelize: Sequelize.Sequelize,
@@ -66,10 +67,6 @@ export const Store = (
             text: {
                 type: DataTypes.STRING,
                 allowNull: false
-            },
-            vehicle_id: {
-                type: DataTypes.INTEGER,
-                allowNull: false
             }
         },
         {
@@ -82,6 +79,14 @@ export const Store = (
             }
         }
     )
+
+    model.associate = (models: Models) => {
+        model.hasMany(models.VehiclePhoto, {
+            sourceKey: "id",
+            foreignKey: "vehicle_id",
+            as: "vehicle_images"
+        })
+    }
 
     return model
 }

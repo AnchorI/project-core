@@ -1,5 +1,6 @@
 import type { EquipmentInstance, EquipmentModel } from "@interfaces/models/equipment.interface"
 import type Sequelize from "sequelize"
+import {Models} from "@interfaces/db";
 
 export const Equipment = (
     sequelize: Sequelize.Sequelize,
@@ -56,9 +57,21 @@ export const Equipment = (
                 }
             }
         }
-
-
     )
+
+    model.associate = (models: Models) => {
+        model.hasMany(models.EquipmentImage, {
+            sourceKey: "id",
+            foreignKey: "equipment_id",
+            as: "equipment_images"
+        })
+        model.hasMany(models.Store, {
+            sourceKey: "id",
+            foreignKey: "equipment",
+            as: "equipment_store"
+        })
+
+    }
 
     return model
 }
