@@ -8,6 +8,13 @@ class EuipmentService extends BaseService {
     public async getList(pagination: PaginationProps): Promise<ListResponse<EquipmentAttributes>> {
         const options: FindAndCountOptions = {
             ...pagination,
+            include: [
+                {
+                    model: this.models.EquipmentImage,
+                    as: "equipment_images",
+                    attributes: ["id", "image"]
+                }
+            ],
             order: [["id", "ASC"]]
         }
 

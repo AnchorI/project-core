@@ -8,6 +8,13 @@ class CarModelService extends BaseService{
     public async  getList(pagination: PaginationProps): Promise<ListResponse<CarModelAttributes>> {
         const  options: FindAndCountOptions = {
             ...pagination,
+            include: [
+                {
+                    model: this.models.CarModelImage,
+                    as: "model_images",
+                    attributes: ["id", "image"]
+                }
+            ],
             order: [["id", "ASC"]]
         }
 

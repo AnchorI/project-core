@@ -8,6 +8,13 @@ class GenerationService extends BaseService {
     public async getList(pagination: PaginationProps): Promise<ListResponse<GenerationAttributes>> {
         const options: FindAndCountOptions = {
             ...pagination,
+            include: [
+                {
+                    model: this.models.GenerationImage,
+                    as: "generation_images",
+                    attributes: ["id", "image"]
+                }
+            ],
             order: [["id", "ASC"]]
         }
 

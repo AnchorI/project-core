@@ -33,7 +33,7 @@ export const CarModel = (
             updatedAt: "updated_at",
             scopes: {
                 list: {
-                    attributes: ["id", "brand_id", "name", "descripton"]
+                    attributes: ["id", "brand_id", "name", "description"]
                 }
             }
         }
