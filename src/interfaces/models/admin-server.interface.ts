@@ -20,11 +20,10 @@ export interface AdminServerAttributes extends BaseAttributes {
     api_key: string
 }
 
-export interface AdminServerCreationAttributes
-    extends Optional<AdminServerAttributes, "id" | "created_at" | "updated_at"> {}
+export type AdminServerCreationAttributes = Optional<AdminServerAttributes, "id" | "created_at" | "updated_at">
 
 export interface AdminServerInstance
     extends Model<AdminServerAttributes, AdminServerCreationAttributes>,
         AdminServerAttributes {}
 
-export interface AdminServerModel extends ModelStatic<AdminServerInstance> {}
+export type AdminServerModel = ModelStatic<AdminServerInstance>
