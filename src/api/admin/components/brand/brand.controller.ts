@@ -14,7 +14,7 @@ class BrandController extends BaseController {
         res: Response<ListResponse>
     ) => {
         const pagination = this.getPagination(req)
-
+        console.log('test')
         const response = await this.brand.getList(pagination)
         if (!response) return this.httpError(res, 'Brands not found')
 
