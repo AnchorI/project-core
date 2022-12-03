@@ -1,4 +1,4 @@
-import type { JWT } from "@interfaces/jwt"
+import type { JWT } from '@interfaces/jwt'
 
 export interface IJWT {
     decrypt: (token: string) => JWT | null
@@ -43,8 +43,8 @@ export interface DateFilterProps {
 }
 
 export enum SortingType {
-    Asc = "ASC",
-    Desc = "DESC"
+    Asc = 'ASC',
+    Desc = 'DESC',
 }
 
 export interface SortingProps {

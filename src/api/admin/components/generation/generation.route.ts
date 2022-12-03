@@ -1,6 +1,6 @@
-import type { Routes } from "@interfaces/routes"
-import {Router} from "express";
-import GenerationController from "@root/api/admin/components/generation/generation.controller";
+import type { Routes } from '@interfaces/routes'
+import { Router } from 'express'
+import GenerationController from '@root/api/admin/components/generation/generation.controller'
 
 class GenerationRoute implements Routes {
     public router = Router()

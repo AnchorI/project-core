@@ -1,6 +1,5 @@
-import type { BaseAttributes } from "@interfaces/models/base.interface"
-import type { Model, ModelStatic, Optional } from "sequelize"
-
+import type { BaseAttributes } from '@interfaces/models/base.interface'
+import type { Model, ModelStatic, Optional } from 'sequelize'
 
 export interface GenerationAttributes extends BaseAttributes {
     name: string
@@ -13,7 +12,10 @@ export interface GenerationAttributes extends BaseAttributes {
     description: string
 }
 
-export type GenerationCreationAttributes = Optional<GenerationAttributes, "id" | "created_at" | "updated_at">
+export type GenerationCreationAttributes = Optional<
+    GenerationAttributes,
+    'id' | 'created_at' | 'updated_at'
+>
 
 export interface GenerationInstance
     extends Model<GenerationAttributes, GenerationCreationAttributes>,

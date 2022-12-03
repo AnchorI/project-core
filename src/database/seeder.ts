@@ -1,16 +1,16 @@
-import "../aliases"
-import path from "path"
+import '../aliases'
+import path from 'path'
 
-import async from "async"
+import async from 'async'
 
-import DB from "@database/connect"
-import { orderSeeds } from "@database/seeds"
-import { printLine } from "@helpers/print"
+import DB from '@database/connect'
+import { orderSeeds } from '@database/seeds'
+import { printLine } from '@helpers/print'
 
-import { database } from "@config/database"
-import config from "@config/index"
+import { database } from '@config/database'
+import config from '@config/index'
 
-import { Env } from "@interfaces/env"
+import { Env } from '@interfaces/env'
 
 interface Model {
     model: string
@@ -37,28 +37,33 @@ const main = () => {
             const validModels = getValidModelsPaths(orderSeeds)
 
             const modelList = validModels.map(
-                async seedFile =>
+                async (seedFile) =>
                     new Promise((resolve, reject) => {
                         import(seedFile)
-                            .then(item => {
-                                if (item && item.default && item.default.model) {
-                                    const { model, depends, data } = item.default
+                            .then((item) => {
+                                if (
+                                    item &&
+                                    item.default &&
+                                    item.default.model
+                                ) {
+                                    const { model, depends, data } =
+                                        item.default
                                     resolve({ model, depends, data })
                                 } else {
                                     resolve({})
                                 }
                             })
-                            .catch(error => {
+                            .catch((error) => {
                                 printLine(`Error ${error}`)
                                 reject()
                             })
                     })
             )
 
-            Promise.all(modelList).then(models => {
+            Promise.all(modelList).then((models) => {
                 const modelsQueue = models as Array<Model>
 
-                modelsQueue.forEach(seedModel => {
+                modelsQueue.forEach((seedModel) => {
                     printLine(`- Seed model ${seedModel.model}`)
                 })
 
@@ -77,10 +82,10 @@ const main = () => {
                     }
                 )
 
-                printLine(" ")
+                printLine(' ')
             })
         })
-        .catch(error => printLine(`Error ${error}`))
+        .catch((error) => printLine(`Error ${error}`))
 }
 
 main()

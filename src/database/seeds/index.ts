@@ -8,5 +8,5 @@ export const orderSeeds = [
     'equipment',
     'equipment-image',
     'store',
-    'vehicle-photo'
+    'vehicle-photo',
 ]

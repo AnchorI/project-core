@@ -1,4 +1,4 @@
-import {BrandAttributes} from "@interfaces/models/brand.interface";
+import { BrandAttributes } from '@interfaces/models/brand.interface'
 
 export interface GetListRequest {
     query: PaginationQuery

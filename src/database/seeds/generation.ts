@@ -1,5 +1,5 @@
-import {GenerationCreationAttributes} from "@interfaces/models/generation.interface";
-import generationFactory from "@database/factories/generation.factory";
+import { GenerationCreationAttributes } from '@interfaces/models/generation.interface'
+import generationFactory from '@database/factories/generation.factory'
 
 export const generation: Array<GenerationCreationAttributes> = [
     generationFactory.build({
@@ -68,10 +68,9 @@ export const generation: Array<GenerationCreationAttributes> = [
         length: 300,
         description: 'Description',
     }),
-
 ]
 
 export default {
-    model: "Generation",
-    data: generation
+    model: 'Generation',
+    data: generation,
 }

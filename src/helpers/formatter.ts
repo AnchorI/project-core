@@ -1,6 +1,6 @@
-import dayjs from "dayjs"
-import timezone from "dayjs/plugin/timezone"
-import utc from "dayjs/plugin/utc"
+import dayjs from 'dayjs'
+import timezone from 'dayjs/plugin/timezone'
+import utc from 'dayjs/plugin/utc'
 
 dayjs.extend(utc)
 dayjs.extend(timezone)
@@ -23,7 +23,7 @@ class Formatter {
     }
 
     public dateToURL(date: Date | null | undefined): string {
-        return date ? dayjs(date).format("MM/DD/YYYY") : ""
+        return date ? dayjs(date).format('MM/DD/YYYY') : ''
     }
 
     public urlToDate(date: string | null | undefined): Date | null {

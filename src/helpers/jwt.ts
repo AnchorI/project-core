@@ -1,9 +1,9 @@
-import dayjs from "dayjs"
-import jwt from "jsonwebtoken"
+import dayjs from 'dayjs'
+import jwt from 'jsonwebtoken'
 
-import config from "@config/index"
+import config from '@config/index'
 
-import type { JWT } from "@interfaces/jwt"
+import type { JWT } from '@interfaces/jwt'
 
 export const decrypt = (token: string): JWT | null => {
     try {
@@ -24,14 +24,17 @@ export const encrypt = (payload: JWT): string => {
 
 const getTimeStamp = () => dayjs().unix()
 
-export const createJWT = (userId: number, ttl: number = config.jwtTTL): string =>
+export const createJWT = (
+    userId: number,
+    ttl: number = config.jwtTTL
+): string =>
     encrypt({
         user_id: userId,
-        expires_at: getTimeStamp() + ttl
+        expires_at: getTimeStamp() + ttl,
     })
 
 export const createRefresh = (userId: number): string =>
     encrypt({
         user_id: userId,
-        expires_at: getTimeStamp() + config.refreshTokenTTL
+        expires_at: getTimeStamp() + config.refreshTokenTTL,
     })

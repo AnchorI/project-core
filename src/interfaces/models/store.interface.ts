@@ -1,11 +1,10 @@
-import type { BaseAttributes } from "@interfaces/models/base.interface"
-import type { Model, ModelStatic, Optional } from "sequelize"
-
+import type { BaseAttributes } from '@interfaces/models/base.interface'
+import type { Model, ModelStatic, Optional } from 'sequelize'
 
 export enum Role {
-    in_stock = "0",
-    on_the_way = "1",
-    order_only = "2",
+    in_stock = '0',
+    on_the_way = '1',
+    order_only = '2',
 }
 
 export interface StoreAttributes extends BaseAttributes {
@@ -24,7 +23,10 @@ export interface StoreAttributes extends BaseAttributes {
     text: string
 }
 
-export type StoreCreationAttributes = Optional<StoreAttributes, "id" | "created_at" | "updated_at">
+export type StoreCreationAttributes = Optional<
+    StoreAttributes,
+    'id' | 'created_at' | 'updated_at'
+>
 
 export interface StoreInstance
     extends Model<StoreAttributes, StoreCreationAttributes>,

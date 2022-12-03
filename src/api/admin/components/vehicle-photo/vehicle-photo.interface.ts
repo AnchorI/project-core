@@ -1,4 +1,4 @@
-import {VehiclePhotoAttributes} from "@interfaces/models/vehicle-photo.interface";
+import { VehiclePhotoAttributes } from '@interfaces/models/vehicle-photo.interface'
 
 export interface GetListRequest {
     query: PaginationQuery

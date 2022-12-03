@@ -1,5 +1,5 @@
-import {Factory} from "fishery";
-import {GenerationCreationAttributes} from "@interfaces/models/generation.interface";
+import { Factory } from 'fishery'
+import { GenerationCreationAttributes } from '@interfaces/models/generation.interface'
 
 const generationFactory = Factory.define<GenerationCreationAttributes>(() => ({
     name: 'Name',
@@ -9,7 +9,7 @@ const generationFactory = Factory.define<GenerationCreationAttributes>(() => ({
     height: 123,
     width: 321,
     length: 666,
-    description: "Description",
+    description: 'Description',
 }))
 
 export default generationFactory

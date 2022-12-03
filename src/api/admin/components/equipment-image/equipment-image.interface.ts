@@ -1,4 +1,4 @@
-import type {EquipmentImageAttributes} from "@interfaces/models/equipment-image.interface";
+import type { EquipmentImageAttributes } from '@interfaces/models/equipment-image.interface'
 
 export interface GetListRequest {
     query: PaginationQuery

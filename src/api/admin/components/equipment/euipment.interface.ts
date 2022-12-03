@@ -1,4 +1,4 @@
-import {EquipmentAttributes} from "@interfaces/models/equipment.interface";
+import { EquipmentAttributes } from '@interfaces/models/equipment.interface'
 
 export interface GetListRequest {
     query: PaginationQuery

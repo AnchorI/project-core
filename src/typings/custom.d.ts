@@ -1,11 +1,11 @@
-import type { Acl } from "@interfaces/acl"
-import type { Models } from "@interfaces/db"
-import type { AdminServersAttributes } from "@interfaces/models/admin-servers.interface"
-import type { PartnerAttributes } from "@interfaces/models/partner.interface"
-import type { UserAttributes } from "@interfaces/models/user.interface"
-import type express from "express"
-import type Sequelize from "sequelize"
-import type { Model } from "sequelize"
+import type { Acl } from '@interfaces/acl'
+import type { Models } from '@interfaces/db'
+import type { AdminServersAttributes } from '@interfaces/models/admin-servers.interface'
+import type { PartnerAttributes } from '@interfaces/models/partner.interface'
+import type { UserAttributes } from '@interfaces/models/user.interface'
+import type express from 'express'
+import type Sequelize from 'sequelize'
+import type { Model } from 'sequelize'
 
 declare global {
     interface PaginationQuery {
@@ -23,12 +23,13 @@ declare global {
 }
 
 declare global {
-    interface PartnerRequest<P> extends Omit<express.Request<P>, "user" | "acl" | "server"> {
+    interface PartnerRequest<P>
+        extends Omit<express.Request<P>, 'user' | 'acl' | 'server'> {
         partner?: PartnerAttributes
     }
 }
 
-declare module "express" {
+declare module 'express' {
     export interface Response extends express.Response {}
 
     export interface NextFunction extends express.NextFunction {}
@@ -42,16 +43,18 @@ declare module "express" {
             response?: any
         }
 
-        query: Partial<BasicQuery> & P["query"]
-        body: P["body"]
-        params: P["params"]
+        query: Partial<BasicQuery> & P['query']
+        body: P['body']
+        params: P['params']
     }
 }
 
-declare module "json2yaml"
+declare module 'json2yaml'
 
-declare module "sequelize" {
-    export type ModelStatic<M extends Model> = NonConstructor<typeof Model> & { new (): M } & {
+declare module 'sequelize' {
+    export type ModelStatic<M extends Model> = NonConstructor<typeof Model> & {
+        new (): M
+    } & {
         associate?: (reg: Models) => void
     } & { decrement?: any }
 

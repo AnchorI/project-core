@@ -1,6 +1,6 @@
-import type { Routes } from "@interfaces/routes"
-import {Router} from "express";
-import BrandController from "@root/api/admin/components/brand/brand.controller";
+import type { Routes } from '@interfaces/routes'
+import { Router } from 'express'
+import BrandController from '@root/api/admin/components/brand/brand.controller'
 
 class BrandRoute implements Routes {
     public router = Router()

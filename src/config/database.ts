@@ -1,6 +1,6 @@
-import type { Dialect } from "sequelize"
+import type { Dialect } from 'sequelize'
 
-import config from "./index"
+import config from './index'
 
 type DatabaseCredentials = {
     host: string
@@ -20,14 +20,13 @@ export const database: EnvDatabaseCredentials = {
         database: config.postgresDatabase,
         username: config.postgresUser,
         password: config.postgresPassword,
-        dialect: "postgres"
+        dialect: 'postgres',
     },
     test: {
         host: config.testPostgresHost,
         database: config.testPostgresDatabase,
         username: config.testPostgresUser,
         password: config.testPostgresPassword,
-        dialect: "postgres"
-    }
+        dialect: 'postgres',
+    },
 }
-

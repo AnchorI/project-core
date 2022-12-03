@@ -1,5 +1,5 @@
-import {EquipmentCreationAttributes} from "@interfaces/models/equipment.interface";
-import equipmentFactory from "@database/factories/equipment.factory";
+import { EquipmentCreationAttributes } from '@interfaces/models/equipment.interface'
+import equipmentFactory from '@database/factories/equipment.factory'
 
 export const equipment: Array<EquipmentCreationAttributes> = [
     equipmentFactory.build({
@@ -10,12 +10,11 @@ export const equipment: Array<EquipmentCreationAttributes> = [
         top_speed: 777,
         acceleration_0_100: 3,
         range: 123123123,
-        transmission: '$WD transmission'
-    })
-
+        transmission: '$WD transmission',
+    }),
 ]
 
 export default {
-    model: "Equipment",
-    data: equipment
+    model: 'Equipment',
+    data: equipment,
 }

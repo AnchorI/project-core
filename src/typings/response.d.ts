@@ -1,4 +1,9 @@
-import type { ListResponse, ErrorResponse, MetricListResponse, UploadResponse } from "@interfaces/api"
+import type {
+    ListResponse,
+    ErrorResponse,
+    MetricListResponse,
+    UploadResponse,
+} from '@interfaces/api'
 
 declare global {
     type ControllerListResponse<T> = ListResponse<T>

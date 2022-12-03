@@ -1,6 +1,5 @@
-import type { BaseAttributes } from "@interfaces/models/base.interface"
-import type { Model, ModelStatic, Optional } from "sequelize"
-
+import type { BaseAttributes } from '@interfaces/models/base.interface'
+import type { Model, ModelStatic, Optional } from 'sequelize'
 
 export interface EquipmentAttributes extends BaseAttributes {
     name: string
@@ -13,7 +12,10 @@ export interface EquipmentAttributes extends BaseAttributes {
     transmission: string
 }
 
-export type EquipmentCreationAttributes = Optional<EquipmentAttributes, "id" | "created_at" | "updated_at">
+export type EquipmentCreationAttributes = Optional<
+    EquipmentAttributes,
+    'id' | 'created_at' | 'updated_at'
+>
 
 export interface EquipmentInstance
     extends Model<EquipmentAttributes, EquipmentCreationAttributes>,

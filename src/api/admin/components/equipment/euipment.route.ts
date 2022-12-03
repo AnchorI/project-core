@@ -1,6 +1,6 @@
-import type { Routes } from "@interfaces/routes";
-import {Router} from "express";
-import EquipmentController from "@root/api/admin/components/equipment/euipment.controller";
+import type { Routes } from '@interfaces/routes'
+import { Router } from 'express'
+import EquipmentController from '@root/api/admin/components/equipment/euipment.controller'
 
 class EquipmentRoute implements Routes {
     public router = Router()

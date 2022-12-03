@@ -1,14 +1,14 @@
-import { Routes } from "@interfaces/routes"
-import { Router } from "express"
-import brand from "./components/brand/brand.route"
-import brandImage from  "./components/brand-image/brand-image.route"
-import carModel from "./components/car-model/car-model.route"
-import equipment from "./components/equipment/euipment.route"
-import equipmentImage from "./components/equipment-image/equipment-image.route"
-import generation from "./components/generation/generation.route"
-import generationImage from  "./components/generation-image/generation-image.route"
-import store from "./components/store/store.route"
-import vehiclePhoto from "./components/vehicle-photo/vehicle-photo.route"
+import { Routes } from '@interfaces/routes'
+import { Router } from 'express'
+import brand from './components/brand/brand.route'
+import brandImage from './components/brand-image/brand-image.route'
+import carModel from './components/car-model/car-model.route'
+import equipment from './components/equipment/euipment.route'
+import equipmentImage from './components/equipment-image/equipment-image.route'
+import generation from './components/generation/generation.route'
+import generationImage from './components/generation-image/generation-image.route'
+import store from './components/store/store.route'
+import vehiclePhoto from './components/vehicle-photo/vehicle-photo.route'
 
 class AdminRoute implements Routes {
     public router = Router()

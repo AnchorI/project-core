@@ -1,4 +1,4 @@
-import type {BrandImageAttributes} from "@interfaces/models/brand-image.interface";
+import type { BrandImageAttributes } from '@interfaces/models/brand-image.interface'
 
 export interface GetListRequest {
     query: PaginationQuery

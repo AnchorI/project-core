@@ -1,6 +1,6 @@
-import type { Routes } from "@interfaces/routes"
-import {Router} from "express";
-import BrandImageController from "@root/api/admin/components/brand-image/brand-image.controller";
+import type { Routes } from '@interfaces/routes'
+import { Router } from 'express'
+import BrandImageController from '@root/api/admin/components/brand-image/brand-image.controller'
 
 class BrandImageRoute implements Routes {
     public router = Router()

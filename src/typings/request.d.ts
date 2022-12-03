@@ -1,4 +1,4 @@
-import type { RequestType } from "@interfaces/api"
+import type { RequestType } from '@interfaces/api'
 
 declare global {
     type ControllerRequest<T = any, P = any> = RequestType<T, P>

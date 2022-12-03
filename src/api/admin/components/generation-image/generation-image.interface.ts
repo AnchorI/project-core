@@ -1,4 +1,4 @@
-import {GenerationImageAttributes} from "@interfaces/models/generation-image.interface";
+import { GenerationImageAttributes } from '@interfaces/models/generation-image.interface'
 
 export interface GetListRequest {
     query: PaginationQuery
