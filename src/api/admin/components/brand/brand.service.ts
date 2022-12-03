@@ -11,7 +11,9 @@ class BrandService extends BaseService {
             order: [["id", "ASC"]]
         }
 
-        return await findWithPaginate(this.models.Brand.scope("list"), options)
+        const response = await findWithPaginate(this.models.Brand.scope("list"), options)
+        console.log('res', response)
+        return response
     }
 }
 

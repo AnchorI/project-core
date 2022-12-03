@@ -9,7 +9,8 @@ class BrandController extends BaseController {
     public getList = async (req: Request, res: Response) => {
         const pagination = this.getPagination(req)
 
-        const response = this.brand.getList(pagination)
+        const response = await this.brand.getList(pagination)
+        console.log('resc', response)
         if (!response) return this.httpError(res, "Brands not found")
 
         return res.json(response)

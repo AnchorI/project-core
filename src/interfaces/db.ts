@@ -1,4 +1,3 @@
-import type { AdminServerModel } from "@interfaces/models/admin-server.interface"
 import type {BrandModel} from "@interfaces/models/brand.interface";
 import type {CarModelModel} from "@interfaces/models/car-model.interface";
 import type {BrandImageModel} from "@interfaces/models/brand-image.interface";
@@ -12,7 +11,6 @@ import {VehiclePhotoModel} from "@interfaces/models/vehicle-photo.interface";
 import {StoreModel} from "@interfaces/models/strore.interface";
 
 export interface Models {
-    AdminServer: AdminServerModel
     Brand: BrandModel
     BrandImage: BrandImageModel
     CarModel: CarModelModel
