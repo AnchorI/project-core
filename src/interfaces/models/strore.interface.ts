@@ -8,7 +8,6 @@ export enum Role {
     order_only = "2",
 }
 
-
 export interface StoreAttributes extends BaseAttributes {
     brand: number
     model: number
@@ -24,8 +23,6 @@ export interface StoreAttributes extends BaseAttributes {
     description: string
     text: string
     vehicle_id: number
-
-
 }
 
 export interface StoreCreationAttributes
