@@ -54,6 +54,6 @@ export interface StoreResponse {
 
 export interface GetListRequest {
     query: PaginationQuery
-}}
+}
 
 export type ListResponse = ControllerListResponse<StoreResponse>
