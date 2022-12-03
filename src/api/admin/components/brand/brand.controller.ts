@@ -12,8 +12,8 @@ class BrandController extends BaseController {
 
         const response = await this.brand.getList(pagination)
         if (!response) return this.httpError(res, "Brands not found")
-    }
-        return res.json(response)
+
+        return res.json(response)}
     }
 }
 
