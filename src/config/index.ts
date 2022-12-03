@@ -20,6 +20,11 @@ type Config = {
     testPostgresPassword: string
     sslCertificate: string
     sslCertificateKey: string
+
+    jwtTTL: number
+    refreshTokenTTL: number
+    listLimitMin: number
+    listLimitMax: number
 }
 
 const envVarSchema = Joi.object({
@@ -63,7 +68,12 @@ const config: Config = {
     testPostgresUser: envVars.TEST_POSTGRES_USER,
     testPostgresPassword: envVars.TEST_POSTGRES_PASSWORD,
     sslCertificate: envVars.SSL_CERTIFICATE,
-    sslCertificateKey: envVars.SSL_CERTIFICATE_KEY
+    sslCertificateKey: envVars.SSL_CERTIFICATE_KEY,
+
+    jwtTTL: 9000,
+    refreshTokenTTL: 5184000,
+    listLimitMin: 25,
+    listLimitMax: 100,
 }
 
 export default config

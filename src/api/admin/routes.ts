@@ -1,5 +1,6 @@
-import { Routes } from "@interfaces/routes";
-import { Router } from "express";
+import { Routes } from "@interfaces/routes"
+import { Router } from "express"
+import brand from "./components/brand/brand.route"
 
 class AdminRoute implements Routes {
     public router = Router()
@@ -9,7 +10,7 @@ class AdminRoute implements Routes {
     }
 
     private initializeRoutes() {
-        //will-be-later
+        this.router.use('/brand', brand)
     }
 }
 
