@@ -8,6 +8,7 @@ import equipmentImage from "./components/equipment-image/equipment-image.route"
 import generation from "./components/generation/generation.route"
 import generationImage from  "./components/generation-image/generation-image.route"
 import store from "./components/store/store.route"
+import vehiclePhoto from "./components/vehicle-photo/vehicle-photo.route"
 
 class AdminRoute implements Routes {
     public router = Router()
@@ -22,9 +23,10 @@ class AdminRoute implements Routes {
         this.router.use('/car-model', carModel)
         this.router.use('/equipment', equipment)
         this.router.use('/equipment-image', equipmentImage)
-        this.router.use('/generation', generation),
-        this.router.use('/store', store),
+        this.router.use('/generation', generation)
+        this.router.use('/store', store)
         this.router.use('/generation-image', generationImage)
+        this.router.use('/vehicle-photo', vehiclePhoto)
     }
 }
 

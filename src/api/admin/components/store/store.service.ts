@@ -3,9 +3,10 @@ import {PaginationProps, ListResponse} from "@interfaces/api";
 import {StoreAttributes} from "@interfaces/models/store.interface";
 import {FindAndCountOptions} from "sequelize";
 import {findWithPaginate, removeObjectFields} from "@helpers/database";
+import type {StoreResponse} from "@root/api/admin/components/store/store.interface";
 
 class StoreService extends BaseService {
-    public async getList(pagination: PaginationProps): Promise<ListResponse<StoreAttributes>> {
+    public async getList(pagination: PaginationProps): Promise<ListResponse<StoreResponse>> {
         const options: FindAndCountOptions = {
             ...pagination,
             include: [
