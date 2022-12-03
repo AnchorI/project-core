@@ -15,8 +15,7 @@ export const store: Array<StoreCreationAttributes> = [
         discount: 0,
         quantity: 1,
         description: "Description",
-        text: "Text",
-        vehicle_id: 1,
+        text: "Text"
     })
 ]
 

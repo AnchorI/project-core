@@ -13,8 +13,7 @@ class CarModelImageService extends BaseService {
             order: [["id", "ASC"]]
         }
 
-        const response = await findWithPaginate(this.models.CarModel.scope("list"), options)
-        return response
+        return await findWithPaginate(this.models.CarModel.scope("list"), options)
     }
 }
 

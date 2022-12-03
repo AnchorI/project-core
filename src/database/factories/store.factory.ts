@@ -14,8 +14,7 @@ const storeFactory = Factory.define<StoreCreationAttributes>(() => ({
     discount: 1,
     quantity: 1,
     description: "Description",
-    text: 'Text',
-    vehicle_id: 1
+    text: 'Text'
 }))
 
 export default storeFactory

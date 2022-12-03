@@ -11,9 +11,7 @@ class BrandImageService extends BaseService {
             order: [["id", "ASC"]]
         }
 
-        const response = await findWithPaginate(this.models.BrandImage.scope("list"), options)
-        console.log('res', response)
-        return response
+        return await findWithPaginate(this.models.BrandImage.scope("list"), options)
     }
 }
 
