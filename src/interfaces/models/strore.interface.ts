@@ -22,7 +22,6 @@ export interface StoreAttributes extends BaseAttributes {
     quantity: number
     description: string
     text: string
-    vehicle_id: number
 }
 
 export interface StoreCreationAttributes
