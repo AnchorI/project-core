@@ -1,11 +1,11 @@
-import express from "express"
-import cors from "cors"
-import config from "@root/config"
+import express from 'express'
+import cors from 'cors'
+import adminRoutes from './api/admin/routes'
 
 const app = express()
 
 app.use(cors())
 
-app.use('/', (req, res) => { res.send(`${config.env}`) })
+app.use('/api/admin', adminRoutes)
 
 export default app
