@@ -1,4 +1,4 @@
-import {Role, StoreCreationAttributes} from "@interfaces/models/strore.interface";
+import {Role, StoreCreationAttributes} from "@interfaces/models/store.interface";
 import storeFactory from "@database/factories/store.factory";
 
 export const store: Array<StoreCreationAttributes> = [

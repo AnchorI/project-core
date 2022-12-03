@@ -17,6 +17,9 @@ module.exports = {
         "jest/no-export": "off",
         "jest/no-commented-out-tests": "off",
         "ban-ts-comment": "off",
+        "@typescript-eslint/ban-ts-ignore": "off",
+        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
         "no-empty-interface": "off"
     },
     overrides: [

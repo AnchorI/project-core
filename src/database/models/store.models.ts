@@ -1,4 +1,4 @@
-import type { StoreInstance, StoreModel } from "@interfaces/models/strore.interface"
+import type { StoreInstance, StoreModel } from "@interfaces/models/store.interface"
 import type Sequelize from "sequelize"
 import {Models} from "@interfaces/db";
 

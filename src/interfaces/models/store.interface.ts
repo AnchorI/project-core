@@ -24,11 +24,10 @@ export interface StoreAttributes extends BaseAttributes {
     text: string
 }
 
-export interface StoreCreationAttributes
-    extends Optional<StoreAttributes, "id" | "created_at" | "updated_at"> {}
+export type StoreCreationAttributes = Optional<StoreAttributes, "id" | "created_at" | "updated_at">
 
 export interface StoreInstance
     extends Model<StoreAttributes, StoreCreationAttributes>,
         StoreAttributes {}
 
-export interface StoreModel extends ModelStatic<StoreInstance> {}
+export type StoreModel = ModelStatic<StoreInstance>

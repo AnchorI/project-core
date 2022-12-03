@@ -1,5 +1,5 @@
 import {Factory} from "fishery";
-import {Role, StoreCreationAttributes} from "@interfaces/models/strore.interface";
+import {Role, StoreCreationAttributes} from "@interfaces/models/store.interface";
 
 const storeFactory = Factory.define<StoreCreationAttributes>(() => ({
     brand: 1,

@@ -1,6 +1,6 @@
 import BaseService from "@root/api/service.base";
 import {PaginationProps, ListResponse} from "@interfaces/api";
-import {StoreAttributes} from "@interfaces/models/strore.interface";
+import {StoreAttributes} from "@interfaces/models/store.interface";
 import {FindAndCountOptions} from "sequelize";
 import {findWithPaginate, removeObjectFields} from "@helpers/database";
 

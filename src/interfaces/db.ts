@@ -8,7 +8,7 @@ import type { Sequelize, QueryOptions, QueryOptionsWithType, QueryTypes } from "
 import {EquipmentModel} from "@interfaces/models/equipment.interface";
 import {EquipmentImageModel} from "@interfaces/models/equipment-image.interface";
 import {VehiclePhotoModel} from "@interfaces/models/vehicle-photo.interface";
-import {StoreModel} from "@interfaces/models/strore.interface";
+import {StoreModel} from "@interfaces/models/store.interface";
 
 export interface Models {
     Brand: BrandModel
