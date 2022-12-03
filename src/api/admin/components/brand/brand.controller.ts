@@ -1,7 +1,7 @@
 import BaseController from "@root/api/controller.base"
 import BrandService from "@root/api/admin/components/brand/brand.service"
 import type { Request, Response } from "express"
-import {GetListRequest, ListResponse} from "@root/api/admin/components/brand/brand.interface";
+import type {GetListRequest, ListResponse} from "@root/api/admin/components/brand/brand.interface";
 
 
 class BrandController extends BaseController {
