@@ -6,6 +6,7 @@ import carModel from "@root/api/admin/components/car-model/car-model.route"
 import equipment from "@root/api/admin/components/equipment/euipment.route"
 import equipmentImage from "@root/api/admin/components/equipment-image/equipment-image.route"
 import generation from "@root/api/admin/components/generation/generation.route"
+import generationImage from  "@root/api/admin/components/generation-image/generation-image.route"
 
 class AdminRoute implements Routes {
     public router = Router()
@@ -21,6 +22,7 @@ class AdminRoute implements Routes {
         this.router.use('/equipment', equipment)
         this.router.use('/equipment-image', equipmentImage)
         this.router.use('/generation', generation)
+        this.router.use('/generation-image', generationImage)
     }
 }
 
