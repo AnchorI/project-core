@@ -10,13 +10,15 @@
     "lint:fix": "eslint src/**/*.ts --fix",
     "lint": "./node_modules/.bin/eslint ./src --ext .ts  --quiet",
     "type": "tsc --project tsconfig.json --noEmit",
-    "format": "prettier --write 'src/**/*.{js,ts,json}'"
+    "format": "prettier --write 'src/**/*.{js,ts,json}'",
+    "seed:test": "cross-env NODE_ENV=test ts-node --transpile-only --files src/database/seeder.ts"
   },
   "keywords": [],
   "author": "AnchorI",
   "license": "ISC",
   "repository": "https://git.aftermath.team/AnchorI/evcar-node",
   "dependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@types/async": "^3.2.16",
     "@types/clone-deep": "^4.0.1",
     "@types/cors": "^2.8.12",
@@ -39,6 +41,7 @@
     "eslint-plugin-jest": "^27.1.6",
     "eslint-plugin-prettier": "^4.2.1",
     "express": "^4.18.2",
+    "faker-js": "^1.0.0",
     "fishery": "^2.2.2",
     "helpers": "^0.0.6",
     "http-status": "^1.5.3",

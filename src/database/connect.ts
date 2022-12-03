@@ -80,6 +80,7 @@ const DB: Db = {
         Generation: Models.Generation(sequelize, Sequelize.DataTypes),
         GenerationImage: Models.GenerationImage(sequelize, Sequelize.DataTypes),
         Store: Models.Store(sequelize, Sequelize.DataTypes),
+        User: Models.User(sequelize, Sequelize.DataTypes),
         VehiclePhoto: Models.VehiclePhoto(sequelize, Sequelize.DataTypes),
     },
 }
