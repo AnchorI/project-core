@@ -2,11 +2,11 @@ import { Routes } from "@interfaces/routes"
 import { Router } from "express"
 import brand from "./components/brand/brand.route"
 import brandImage from  "./components/brand-image/brand-image.route"
-import carModel from "@root/api/admin/components/car-model/car-model.route"
-import equipment from "@root/api/admin/components/equipment/euipment.route"
-import equipmentImage from "@root/api/admin/components/equipment-image/equipment-image.route"
-import generation from "@root/api/admin/components/generation/generation.route"
-
+import carModel from "./components/car-model/car-model.route"
+import equipment from "./components/equipment/euipment.route"
+import equipmentImage from "./components/equipment-image/equipment-image.route"
+import generation from "./components/generation/generation.route"
+import store from "./components/store/store.route"
 class AdminRoute implements Routes {
     public router = Router()
 
@@ -21,6 +21,7 @@ class AdminRoute implements Routes {
         this.router.use('/equipment', equipment)
         this.router.use('/equipment-image', equipmentImage)
         this.router.use('/generation', generation)
+        this.router.use('/store', store)
     }
 }
 

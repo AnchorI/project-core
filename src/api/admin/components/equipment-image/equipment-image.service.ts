@@ -12,8 +12,7 @@ class EquipmentImageService extends BaseService {
             order: [["id", "ASC"]]
         }
 
-        const response = await findWithPaginate(this.models.EquipmentImage.scope("list"), options)
-        return response
+        return await findWithPaginate(this.models.EquipmentImage.scope("list"), options)
     }
 }
 

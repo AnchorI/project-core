@@ -18,8 +18,7 @@ class EuipmentService extends BaseService {
             order: [["id", "ASC"]]
         }
 
-        const response = await findWithPaginate(this.models.Equipment.scope("list"), options)
-        return  response
+        return await findWithPaginate(this.models.Equipment.scope("list"), options)
     }
 }
 
