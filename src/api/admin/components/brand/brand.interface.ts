@@ -1,7 +1,9 @@
 import { BrandAttributes } from '@interfaces/models/brand.interface'
 
 export interface GetListRequest {
-    query: PaginationQuery
+    query: {
+        name?: string
+    } & PaginationQuery
 }
 
 export interface BrandRequest {

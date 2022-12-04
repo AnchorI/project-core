@@ -11,7 +11,9 @@
     "lint": "./node_modules/.bin/eslint ./src --ext .ts  --quiet",
     "type": "tsc --project tsconfig.json --noEmit",
     "format": "prettier --write 'src/**/*.{js,ts,json}'",
-    "seed:test": "cross-env NODE_ENV=test ts-node --transpile-only --files src/database/seeder.ts"
+    "seed:test": "cross-env NODE_ENV=test ts-node --transpile-only --files src/database/seeder.ts",
+    "apidoc": "ts-node --files src/commands/apidoc/index.ts",
+    "apidoc:dev": "cross-env NODE_ENV=development nodemon --exec ts-node --transpile-only src/processes/apidoc.ts"
   },
   "keywords": [],
   "author": "AnchorI",
@@ -28,7 +30,9 @@
     "@types/jsonwebtoken": "^8.5.9",
     "@types/module-alias": "^2.0.1",
     "@types/node": "^18.11.10",
+    "@types/node-emoji": "^1.8.2",
     "@types/prettier": "^2.7.1",
+    "@types/swagger-ui-express": "^4.1.3",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "async": "^3.2.4",
@@ -58,6 +62,7 @@
     "save-dev": "^0.0.1-security",
     "sequelize": "^6.26.0",
     "swagger-parser": "^10.0.3",
+    "swagger-ui-express": "^4.6.0",
     "typescript": "^4.9.3",
     "yamljs": "^0.3.0"
   },

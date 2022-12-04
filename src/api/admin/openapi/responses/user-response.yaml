@@ -1,0 +1,14 @@
+description: User response
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        user:
+          $ref: "../schemas/user.details.yaml"
+        meta:
+          type: object
+          properties:
+            new_documents:
+              type: integer
+              description: New documents count

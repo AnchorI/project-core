@@ -1,0 +1,92 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: User id
+  email:
+    type: string
+    description: Current user email
+  first_name:
+    type: string
+    description: Current user first name
+  last_name:
+    type: string
+    description: Current user last name
+  additional_info:
+    type: string
+    description: Current user additional info
+  contact_email:
+    type: string
+    description: Current user contact email
+  time_zone:
+    type: string
+    description: Current user time zone
+  company_name:
+    type: string
+    description: Current user company name
+  billing_address:
+    type: string
+    description: Current user billing address
+  attn_contact_name:
+    type: string
+    description: Current user attn contact name
+  max_sip_channels:
+    type: integer
+    description: Current user maximum SIP channels
+  max_call_duration:
+    type: integer
+    description: Current user maximum call duration
+  role:
+    type: string
+    description: User role
+  master_id:
+    type: integer
+    nullable: true
+    description: Master id
+  negative_balance_value:
+    type: string
+    description: Negative balance value
+  maximum_pstn_price:
+    type: integer
+    description: Maximum pstn price
+  phone:
+    type: string
+    description: User phone
+  register_country:
+    type: string
+    nullable: true
+    description: User register country
+  is_admin:
+    type: boolean
+    description: Is user admin
+  is_salesman:
+    type: boolean
+    description: Is user salesman
+  is_global_techsupport:
+    type: boolean
+    description: Is user global techsupport
+  is_qa:
+    type: boolean
+    description: Is user qa
+  acl:
+    type: object
+    properties:
+      info_id:
+        type: integer
+        description: Info id
+      acl_info:
+        type: object
+        properties:
+          title:
+            type: string
+            description: Acl info title
+  partner:
+    type: object
+    nullable: true
+    properties:
+      id:
+        type: integer
+        description: Partner id
+      company:
+        type: string
+        description: Company name

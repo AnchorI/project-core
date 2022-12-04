@@ -1,0 +1,5 @@
+description: Callflow response
+content:
+  application/json:
+    schema:
+      $ref: "../schemas/callflow.yaml"
