@@ -25,7 +25,7 @@ class BrandService extends BaseService {
                 },
             ],
             where: {
-                ...(name && { name: { [Op.like]: `%${name}%` } }),
+                ...(name && { name: { [Op.iLike]: `%${name}%` } }),
             },
             order: [['id', 'ASC']],
         }
