@@ -14,7 +14,6 @@ import { EquipmentModel } from '@interfaces/models/equipment.interface'
 import { EquipmentImageModel } from '@interfaces/models/equipment-image.interface'
 import { VehiclePhotoModel } from '@interfaces/models/vehicle-photo.interface'
 import { StoreModel } from '@interfaces/models/store.interface'
-import { UserModel } from '@interfaces/models/user.interface'
 
 export interface Models {
     Brand: BrandModel
@@ -27,7 +26,6 @@ export interface Models {
     EquipmentImage: EquipmentImageModel
     VehiclePhoto: VehiclePhotoModel
     Store: StoreModel
-    User: UserModel
 }
 
 export interface Db {

@@ -25,6 +25,19 @@ class CarModelService extends BaseService {
             options
         )
     }
+
+    public async get(carModelId: number): Promise<CarModelAttributes> {
+        return await this.models.CarModel.scope('list').findOne({
+            where: { id: carModelId },
+            include: [
+                {
+                    model: this.models.CarModelImage,
+                    as: 'model_images',
+                    attributes: ['id', 'image'],
+                },
+            ],
+        })
+    }
 }
 
 export default CarModelService

@@ -12,6 +12,7 @@ class GenerationRoute implements Routes {
 
     private initializeRoutes() {
         this.router.get('/', this.generationController.getList)
+        this.router.get('/:generationId', this.generationController.get)
     }
 }
 

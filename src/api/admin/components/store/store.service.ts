@@ -1,6 +1,5 @@
 import BaseService from '@root/api/service.base'
 import { PaginationProps, ListResponse } from '@interfaces/api'
-import { StoreAttributes } from '@interfaces/models/store.interface'
 import { FindAndCountOptions } from 'sequelize'
 import { findWithPaginate, removeObjectFields } from '@helpers/database'
 import type { StoreResponse } from '@root/api/admin/components/store/store.interface'
@@ -11,6 +10,31 @@ class StoreService extends BaseService {
     ): Promise<ListResponse<StoreResponse>> {
         const options: FindAndCountOptions = {
             ...pagination,
+            ...this.getFindOptions(),
+        }
+        const response = await findWithPaginate(
+            this.models.Store.scope('list'),
+            options
+        )
+
+        return {
+            ...response,
+            items: removeObjectFields(
+                ['brand', 'model', 'generation', 'equipment'],
+                response.items
+            ),
+        }
+    }
+
+    public async get(storeId: number): Promise<StoreResponse> {
+        return await this.models.Store.scope('list').findOne({
+            where: { id: storeId },
+            ...this.getFindOptions(),
+        })
+    }
+
+    private getFindOptions(): FindAndCountOptions {
+        return {
             include: [
                 {
                     model: this.models.VehiclePhoto,
@@ -56,18 +80,6 @@ class StoreService extends BaseService {
                 },
             ],
             order: [['id', 'ASC']],
-        }
-        const response = await findWithPaginate(
-            this.models.Store.scope('list'),
-            options
-        )
-
-        return {
-            ...response,
-            items: removeObjectFields(
-                ['brand', 'model', 'generation', 'equipment'],
-                response.items
-            ),
         }
     }
 }

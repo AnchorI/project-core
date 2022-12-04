@@ -36,6 +36,7 @@ interface EquipmentStore {
 }
 
 export interface StoreResponse {
+    id: number
     mileage: number
     price: number
     release_year: number
@@ -56,4 +57,11 @@ export interface GetListRequest {
     query: PaginationQuery
 }
 
+export interface StoreRequest {
+    params: {
+        storeId: string
+    }
+}
+
 export type ListResponse = ControllerListResponse<StoreResponse>
+export type ItemResponse = ControllerItemResponse<{ store: StoreResponse }>

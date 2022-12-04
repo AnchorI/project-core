@@ -12,6 +12,7 @@ class StoreRoute implements Routes {
 
     private initializeRoutes() {
         this.router.get('/', this.storeController.getList)
+        this.router.get('/:storeId', this.storeController.get)
     }
 }
 

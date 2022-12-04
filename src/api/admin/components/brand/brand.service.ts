@@ -22,6 +22,19 @@ class BrandService extends BaseService {
 
         return await findWithPaginate(this.models.Brand.scope('list'), options)
     }
+
+    public async get(brandId: number): Promise<BrandAttributes> {
+        return await this.models.Brand.scope('list').findOne({
+            where: { id: brandId },
+            include: [
+                {
+                    model: this.models.BrandImage,
+                    as: 'brand_images',
+                    attributes: ['id', 'image'],
+                },
+            ],
+        })
+    }
 }
 
 export default BrandService

@@ -79,6 +79,7 @@ export const Store = (
                 scopes: {
                     list: {
                         attributes: [
+                            'id',
                             'brand',
                             'model',
                             'generation',

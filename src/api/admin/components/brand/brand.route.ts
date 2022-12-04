@@ -12,6 +12,7 @@ class BrandRoute implements Routes {
 
     private initializeRoutes() {
         this.router.get('/', this.brandController.getList)
+        this.router.get('/:brandId', this.brandController.get)
     }
 }
 
