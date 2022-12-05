@@ -6,6 +6,6 @@ const app = express()
 
 app.use(cors())
 
-app.use('/api/admin', adminRoutes)
+app.use('/api/slave', adminRoutes)
 
 export default app

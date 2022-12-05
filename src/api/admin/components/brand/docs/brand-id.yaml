@@ -20,10 +20,10 @@ get:
             properties:
               id:
                 type: integer
-                description: Server ID
+                description: Brand ID
               name:
                 type: string
-                description: Server name
+                description: Brand name
               brand_images:
                 type: object
                 properties:

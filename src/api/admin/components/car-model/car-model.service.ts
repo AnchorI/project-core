@@ -16,6 +16,11 @@ class CarModelService extends BaseService {
                     as: 'model_images',
                     attributes: ['id', 'image'],
                 },
+                {
+                    model: this.models.Brand,
+                    as: 'brand-car',
+                    attributes: ['id', 'name'],
+                },
             ],
             order: [['id', 'ASC']],
         }
@@ -34,6 +39,11 @@ class CarModelService extends BaseService {
                     model: this.models.CarModelImage,
                     as: 'model_images',
                     attributes: ['id', 'image'],
+                },
+                {
+                    model: this.models.Brand,
+                    as: 'brand-car',
+                    attributes: ['id', 'name'],
                 },
             ],
         })

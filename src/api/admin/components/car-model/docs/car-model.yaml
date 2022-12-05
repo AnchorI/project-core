@@ -1,0 +1,65 @@
+get:
+  summary: Get Car Model by ID
+  tags:
+    - Car Model
+  parameters:
+    - in: query
+      name: page
+      schema:
+        type: integer
+      description: Current page
+    - in: query
+      name: limit
+      schema:
+        type: integer
+      description: Maximum number of elements on page
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            description: ""
+            type: object
+            properties:
+              id:
+                type: integer
+                description: Car Model ID
+              name:
+                type: string
+                description: Car Model name
+              description:
+                type: string
+                description: Description
+              model_images:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: image id
+                  image:
+                    type: string
+                    description: image
+              brand:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: Brand id
+                  name:
+                    type: string
+                    description: Brand name
+
+            example:
+              id: 1
+              name: "Model S"
+              description: "Description"
+              model_images:
+                id: 1
+                image: "Model S image"
+              brand-car:
+                id: 1
+                image: "Tesla"
+
+    default:
+      $ref: "../../../openapi/responses/unexpected-error.yaml"

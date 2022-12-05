@@ -1,7 +1,7 @@
 get:
-  summary: Get Brand List
+  summary: Get Brand Image List
   tags:
-    - Brand
+    - Brand Image
   parameters:
     - in: query
       name: page
@@ -13,11 +13,6 @@ get:
       schema:
         type: integer
       description: Maximum number of elements on page
-    - in: query
-      name: name
-      schema:
-        type: string
-      description: Search by name
   responses:
     "200":
       description: OK
@@ -37,19 +32,13 @@ get:
                   properties:
                     id:
                       type: integer
-                      description: Brand id
-                    name:
+                      description: Brand Image id
+                    image:
                       type: string
-                      description: Brand name
-                    brand_images:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                          description: image id
-                        image:
-                          type: string
-                          description: image
+                      description: Image
+                    brand_id:
+                      type: number
+                      description: Brand Id
 
           examples:
             example:
@@ -61,12 +50,8 @@ get:
                   total_pages: 1
                 items:
                   - id: 1
-                    name: "Tesla"
-                    brand_images:
-                      id: 1
-                      image: "Tesla image"
+                    image: "Tesla image"
+                    brand_id: 1
                   - id: 2
-                    name: "Mercedes-Benz"
-                    brand_images:
-                      id: 2
-                      image: "Mercedes-Benz image"
+                    image: "Mercedes-Benz image"
+                    brand_id: 2

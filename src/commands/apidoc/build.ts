@@ -6,7 +6,7 @@ import { printLine } from '@helpers/print'
 
 const main = () => {
     const command = [
-        'redocly bundle src/api/admin/index.yaml --output apidocs/admin.yaml --ext yaml --lint',
+        'redocly bundle src/api/admin/index.yaml --output apidocs/slave.yaml --ext yaml --lint',
     ].join(' && ')
 
     exec(command, (error) => {
