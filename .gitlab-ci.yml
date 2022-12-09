@@ -13,7 +13,6 @@ stages:
   - build
   - package
   - deploy
-  - review
 
 .before_script_template: &build_test-integration
   before_script:
@@ -73,7 +72,7 @@ prettier:
       - node_modules/
     policy: pull
 
-deploy-backend:develop:
+deploy:
   stage: deploy
   only:
     - develop
