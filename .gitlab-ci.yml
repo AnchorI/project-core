@@ -68,7 +68,7 @@ deploy-backend:develop:
   script:
     - whoami
     - whereis pm2
-    - pm2 deploy ecosystem.config.js develop
+    - node dist/server.js
 
   only:
     - develop
