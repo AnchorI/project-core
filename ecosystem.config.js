@@ -18,9 +18,9 @@ module.exports = {
 
     deploy: {
         develop: {
-            user: 'wavix',
-            host: 'wavix-dev.com',
-            port: '1355',
+            user: 'anchori',
+            host: 'aftermath.team',
+            port: '8889',
             ref: 'origin/develop',
             repo: 'http://git.aftermath.team/AnchorI/evcar-node.git',
             path: '/evcar-node',
