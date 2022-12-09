@@ -92,7 +92,7 @@ deploy-backend:develop:
     - echo -e "Host *\nAddKeysToAgent yes\nIgnoreUnknown UseKeychain\nUseKeychain yes\nForwardAgent yes\n\nHost *.aftermath.team\nPort 1355\n\n" > ~/.ssh/config
     - echo "$DEPLOY_SSH_KEY" | base64 -d | ssh-add -
   script:
-    - ssh-keyscan -p 8888 wavix-dev.com >> ~/.ssh/known_hosts
+    - ssh-keyscan -p 8888 aftermath.team >> ~/.ssh/known_hosts
   only:
     - develop
 
