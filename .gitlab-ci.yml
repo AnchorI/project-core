@@ -68,7 +68,7 @@ deploy-backend:develop:
   script:
     - whoami
     - whereis pm2
-    - tsc && node dist/server.js
+    - ls -a
 
   only:
     - develop
