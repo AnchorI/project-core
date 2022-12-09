@@ -14,6 +14,11 @@ stages:
   - package
   - deploy
 
+.before_script_template: &build_test-integration
+  before_script:
+    - cp .env.example .env
+    - yarn install
+
 # prepare stage - install all deps
 deps:node:
   stage: prepare
