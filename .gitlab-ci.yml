@@ -36,13 +36,47 @@ deps:node:
     policy: pull-push
 
 # checks stage
-
-
-deploy:
-  stage: deploy
-
+eslint:
+  stage: checks
   script:
-    - docker run -d -p 8888:8888 node:18
+    - yarn install
+    - ./node_modules/.bin/eslint ./src --ext .ts  --quiet
+  dependencies:
+    - deps:node
+  cache:
+    key: "backend-node"
+    paths:
+      - node_modules/
+    policy: pull
+
+typescript:
+  stage: checks
+  script:
+    - yarn install
+    - ./node_modules/.bin/tsc --project tsconfig.json --noEmit
+  dependencies:
+    - deps:node
+  cache:
+    key: "backend-node"
+    paths:
+      - node_modules/
+    policy: pull
+
+prettier:
+  stage: checks
+  script:
+    - yarn install
+    - ./node_modules/.bin/prettier -c "./src/**/*.ts"
+  cache:
+    key: "backend-node"
+    paths:
+      - node_modules/
+    policy: pull
+
+deploy-backend:develop:
+  stage: deploy
   only:
     - develop
+
+
 
