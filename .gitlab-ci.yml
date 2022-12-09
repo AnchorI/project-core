@@ -74,6 +74,8 @@ deploy-backend:develop:
     - whoami
     - whereis pm2
     - ls -a
+    - cp .env.example .env
+    - yarn install
     - tsc && node dist/server.js
 
   only:
