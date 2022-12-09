@@ -1,4 +1,4 @@
-image: "https://hub.docker.com/_/node:18"
+image: "node:18"
 
 variables:
   POSTGRES_DATABASE: evcar
