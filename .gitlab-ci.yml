@@ -72,12 +72,5 @@ prettier:
       - node_modules/
     policy: pull
 
-deploy-backend:production:
-  stage: deploy
-  environment:
-    name: production
-  only:
-    - develop
-
 
 
