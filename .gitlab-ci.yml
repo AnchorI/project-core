@@ -14,15 +14,6 @@ stages:
   - package
   - deploy
 
-.before_script_template: &build_test-integration
-  before_script:
-    - cp .env.example .env
-    - sed -i -E "s/POSTGRES_HOST=.+/TEST_MYSQL_HOST=aftermath.team/" .env
-    - sed -i -E "s/POSTGRES_USER=.+/TEST_MYSQL_USER=anchori/" .env
-    - sed -i -E "s/POSTGRES_DATABASE=.+/TEST_MYSQL_DATABASE=evcar/" .env
-    - sed -i -E "s/POSTGRES_PASSWORD=.+/TEST_MYSQL_PASSWORD=z00m_ZOom/" .env
-    - yarn install
-
 # prepare stage - install all deps
 deps:node:
   stage: prepare
@@ -72,5 +63,16 @@ prettier:
       - node_modules/
     policy: pull
 
+deploy-backend:develop:
+  stage: deploy
+  before_script:
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo -e "Host *\nAddKeysToAgent yes\nIgnoreUnknown UseKeychain\nUseKeychain yes\nForwardAgent yes\n\nHost *.aftermath.team\nPort 1355\n\n" > ~/.ssh/config
+    - echo "$DEPLOY_SSH_KEY" | base64 -d | ssh-add -
+  script:
+    - ssh-keyscan -p 8888 aftermath.team >> ~/.ssh/known_hosts
 
+  only:
+    - develop
 
