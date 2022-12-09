@@ -66,6 +66,8 @@ prettier:
 deploy-backend:develop:
   stage: deploy
   script:
+    - whoami
+    - whereis pm2
     - pm2 deploy ecosystem.config.js develop
 
   only:
