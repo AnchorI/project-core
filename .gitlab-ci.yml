@@ -42,7 +42,6 @@ deploy:
   stage: deploy
 
   script:
-    - docker pull node:18
     - docker run -d -p 8888:8888 node:18
   only:
     - develop
