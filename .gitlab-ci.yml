@@ -1,10 +1,10 @@
-image: "hub.unitedline.net/wavix/docker-images/node-mysql:16"
+image: "https://hub.docker.com/_/node"
 
 variables:
-  MYSQL_DATABASE: wavix_p
-  MYSQL_ROOT_PASSWORD: runner
-  MYSQL_DB: wavix_p
-  MYSQL_HOST: mysql
+  POSTGRES_DATABASE: evcar
+  POSTGRES_ROOT_PASSWORD: z00m_ZOom
+  POSTGRES_DB: evcar
+  POSTGRES_HOST: aftermath.team
 
 stages:
   - prepare
@@ -18,10 +18,10 @@ stages:
 .before_script_template: &build_test-integration
   before_script:
     - cp .env.example .env
-    - sed -i -E "s/POSTGRES_HOST=.+/TEST_MYSQL_HOST=mysql/" .env
-    - sed -i -E "s/POSTGRES_USER=.+/TEST_MYSQL_USER=root/" .env
-    - sed -i -E "s/POSTGRES_DATABASE=.+/TEST_MYSQL_DATABASE=wavix_p/" .env
-    - sed -i -E "s/POSTGRES_PASSWORD=.+/TEST_MYSQL_PASSWORD=runner/" .env
+    - sed -i -E "s/POSTGRES_HOST=.+/TEST_MYSQL_HOST=aftermath.team/" .env
+    - sed -i -E "s/POSTGRES_USER=.+/TEST_MYSQL_USER=anchori/" .env
+    - sed -i -E "s/POSTGRES_DATABASE=.+/TEST_MYSQL_DATABASE=evcar/" .env
+    - sed -i -E "s/POSTGRES_PASSWORD=.+/TEST_MYSQL_PASSWORD=z00m_ZOom/" .env
     - yarn install
 
 # prepare stage - install all deps
