@@ -66,7 +66,7 @@ prettier:
 deploy-backend:develop:
   stage: deploy
   script:
-    - pm2 deploy ecosystem.config.js production
+    - pm2 deploy ecosystem.config.js develop
 
   only:
     - develop
