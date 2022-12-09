@@ -73,15 +73,13 @@ prettier:
       - node_modules/
     policy: pull
 
-deploy-backend:develop:
+deploy:
   stage: deploy
-  before_script:
-    - mkdir -p ~/.ssh
-    - eval $(ssh-agent -s)
-    - echo -e "Host *\nAddKeysToAgent yes\nIgnoreUnknown UseKeychain\nUseKeychain yes\nForwardAgent yes\n\nHost *.aftermath.team\nPort 1355\n\n" > ~/.ssh/config
-    - echo "$DEPLOY_SSH_KEY" | base64 -d | ssh-add -
+  tags:
+    - local_docker
   script:
-    - ssh-keyscan -p 8888 aftermath.team >> ~/.ssh/known_hosts
+    - docker pull node:18
+    - docker run -d -p 8888:8888 node:18
   only:
     - develop
 
