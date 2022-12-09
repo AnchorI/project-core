@@ -1,0 +1,98 @@
+image: "hub.unitedline.net/wavix/docker-images/node-mysql:16"
+
+variables:
+  MYSQL_DATABASE: wavix_p
+  MYSQL_ROOT_PASSWORD: runner
+  MYSQL_DB: wavix_p
+  MYSQL_HOST: mysql
+
+stages:
+  - prepare
+  - checks
+  - test
+  - build
+  - package
+  - deploy
+  - review
+
+.before_script_template: &build_test-integration
+  before_script:
+    - cp .env.example .env
+    - sed -i -E "s/POSTGRES_HOST=.+/TEST_MYSQL_HOST=mysql/" .env
+    - sed -i -E "s/POSTGRES_USER=.+/TEST_MYSQL_USER=root/" .env
+    - sed -i -E "s/POSTGRES_DATABASE=.+/TEST_MYSQL_DATABASE=wavix_p/" .env
+    - sed -i -E "s/POSTGRES_PASSWORD=.+/TEST_MYSQL_PASSWORD=runner/" .env
+    - yarn install
+
+# prepare stage - install all deps
+deps:node:
+  stage: prepare
+  script:
+    - yarn install
+  cache:
+    key: "backend-node"
+    paths:
+      - node_modules
+    policy: pull-push
+
+# checks stage
+eslint:
+  stage: checks
+  script:
+    - yarn install
+    - ./node_modules/.bin/eslint ./src --ext .ts  --quiet
+  dependencies:
+    - deps:node
+  cache:
+    key: "backend-node"
+    paths:
+      - node_modules/
+    policy: pull
+
+typescript:
+  stage: checks
+  script:
+    - yarn install
+    - ./node_modules/.bin/tsc --project tsconfig.json --noEmit
+  dependencies:
+    - deps:node
+  cache:
+    key: "backend-node"
+    paths:
+      - node_modules/
+    policy: pull
+
+prettier:
+  stage: checks
+  script:
+    - yarn install
+    - ./node_modules/.bin/prettier -c "./src/**/*.ts"
+  cache:
+    key: "backend-node"
+    paths:
+      - node_modules/
+    policy: pull
+
+apidoc:
+  stage: checks
+  script:
+    - yarn install
+    - yarn apidoc lint
+  cache:
+    key: "backend-node"
+    paths:
+      - node_modules/
+    policy: pull
+
+deploy-backend:develop:
+  stage: deploy
+  before_script:
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo -e "Host *\nAddKeysToAgent yes\nIgnoreUnknown UseKeychain\nUseKeychain yes\nForwardAgent yes\n\nHost *.aftermath.team\nPort 1355\n\n" > ~/.ssh/config
+    - echo "$DEPLOY_SSH_KEY" | base64 -d | ssh-add -
+  script:
+    - ssh-keyscan -p 1355 wavix-dev.com >> ~/.ssh/known_hosts
+  only:
+    - develop
+
