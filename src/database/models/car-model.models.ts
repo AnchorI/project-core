@@ -59,9 +59,10 @@ export const CarModel = (
             foreignKey: 'car_model_id',
             as: 'model_generation',
         })
-        model.belongsTo(models.Brand, {
+        model.hasOne(models.Brand, {
+            sourceKey: 'brand_id',
             foreignKey: 'id',
-            as: 'brand-car',
+            as: 'model-brand',
         })
     }
 

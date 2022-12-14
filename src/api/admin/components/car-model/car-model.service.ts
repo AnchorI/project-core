@@ -18,7 +18,7 @@ class CarModelService extends BaseService {
                 },
                 {
                     model: this.models.Brand,
-                    as: 'brand-car',
+                    as: 'model-brand',
                     attributes: ['id', 'name'],
                 },
             ],
@@ -42,7 +42,7 @@ class CarModelService extends BaseService {
                 },
                 {
                     model: this.models.Brand,
-                    as: 'brand-car',
+                    as: 'model-brand',
                     attributes: ['id', 'name'],
                 },
             ],
