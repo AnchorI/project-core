@@ -1,4 +1,3 @@
-
 stages:
   - build
   - deploy
@@ -7,16 +6,35 @@ variables:
   TAG_LATEST: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:latest
   TAG_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHORT_SHA
   APP_NAME: evcar-node
-  NODE_PORT: 8777
+  APP_PORT: ${PORT}
+  NODE_PORT: 8181
 
 build:
   tags: [ deploy ]
   image: docker:git
   stage: build
+  variables:
+    NODE_ENV: ${NODE_ENV}
+    API_VERSION: ${API_VERSION}
+    JWT_SECRET: ${JWT_SECRET}
+    DB_HOST: ${POSTGRES_HOST}
+    DB_PORT: 5432
+    DB_USER: ${POSTGRES_USER}
+    DB_PASS: ${POSTGRES_PASSWORD}
+    DB_NAME: ${POSTGRES_DATABASE}
   services:
     - docker:dind
   script:
-    - docker build -t $TAG_COMMIT -t $TAG_LATEST .
+    - docker build -t $TAG_COMMIT -t $TAG_LATEST 
+      --build-arg NODE_ENV
+      --build-arg API_VERSION
+      --build-arg JWT_SECRET
+      --build-arg DB_HOST
+      --build-arg DB_PORT
+      --build-arg DB_USER
+      --build-arg DB_PASS
+      --build-arg DB_NAME
+      .
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker push $TAG_COMMIT
     - docker push $TAG_LATEST
@@ -32,8 +50,8 @@ deploy:
     - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY"
     - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker pull $TAG_COMMIT"
     - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker container rm -f $APP_NAME || true"
-    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker run -d -p $NODE_PORT:8777 --name $APP_NAME --restart always $TAG_COMMIT"
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker run -d -p $NODE_PORT:$APP_PORT --name $APP_NAME --restart always $TAG_COMMIT"
   environment:
     name: production
   only:
-    - /^release.*$/
+    - main
