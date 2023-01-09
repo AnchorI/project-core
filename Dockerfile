@@ -13,7 +13,7 @@ RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nodecore
 RUN chown nodecore:nodejs /app
 
 USER nodecore
-
+RUN ls
 RUN yarn start
 
 ENV NODE_ENV production
