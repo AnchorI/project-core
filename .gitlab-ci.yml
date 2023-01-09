@@ -34,6 +34,7 @@ build:
       --build-arg DB_USER
       --build-arg DB_PASS
       --build-arg DB_NAME
+      --build-arg APP_PORT
       .
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker push $TAG_COMMIT
