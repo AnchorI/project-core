@@ -25,6 +25,19 @@ class EuipmentService extends BaseService {
             options
         )
     }
+
+    public async get(equipmentId: number): Promise<EquipmentAttributes> {
+        return await this.models.Equipment.scope('list').findOne({
+            where: { id: equipmentId },
+            include: [
+                {
+                    model: this.models.EquipmentImage,
+                    as: 'equipment_images',
+                    attributes: ['id', 'image'],
+                },
+            ],
+        })
+    }
 }
 
 export default EuipmentService

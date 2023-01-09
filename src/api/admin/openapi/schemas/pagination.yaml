@@ -1,0 +1,14 @@
+type: object
+properties:
+  limit:
+    type: integer
+    description: Maximum number of elements on page
+  total:
+    type: integer
+    description: Total elements
+  current_page:
+    type: integer
+    description: Current page number
+  total_pages:
+    type: integer
+    description: Total pages

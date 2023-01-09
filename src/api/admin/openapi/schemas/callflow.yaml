@@ -1,0 +1,28 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: Call flow id
+  name:
+    type: string
+    description: Call flow name
+  created_at:
+    type: string
+    description: Call flow created date
+  updated_at:
+    type: string
+    description: Call flow updated date
+  status:
+    type: number
+    description: Call flow status
+  user:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: User id
+      email:
+        type: string
+        description: User email
+    
+ 

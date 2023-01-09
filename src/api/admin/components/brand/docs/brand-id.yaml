@@ -1,0 +1,45 @@
+get:
+  summary: Get Brand by ID
+  tags:
+    - Brand
+  parameters:
+    - in: path
+      name: brandId
+      schema:
+        type: integer
+      required: true
+      description: Numeric brand ID
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            description: ""
+            type: object
+            properties:
+              id:
+                type: integer
+                description: Brand ID
+              name:
+                type: string
+                description: Brand name
+              brand_images:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: image id
+                  image:
+                    type: string
+                    description: image
+
+            example:
+                id: 2
+                name: "Mercedes-Benz"
+                host:
+                  id: 2
+                  image: "Mercedes-Benz image"
+
+    default:
+      $ref: "../../../openapi/responses/unexpected-error.yaml"

@@ -12,8 +12,7 @@ module.exports = {
     },
     rules: {
         'prettier/prettier': 'error',
-        'no-unused-vars': 'warn',
-        'no-console': 'off',
+        'no-console': 'error',
         'jest/no-export': 'off',
         'jest/no-commented-out-tests': 'off',
         'ban-ts-comment': 'off',

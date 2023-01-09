@@ -12,6 +12,7 @@ class EquipmentRoute implements Routes {
 
     private initializeRoutes() {
         this.router.get('/', this.equipmentController.getList)
+        this.router.get('/:equipmentId', this.equipmentController.get)
     }
 }
 

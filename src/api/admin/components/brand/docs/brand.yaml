@@ -1,0 +1,72 @@
+get:
+  summary: Get Brand List
+  tags:
+    - Brand
+  parameters:
+    - in: query
+      name: page
+      schema:
+        type: integer
+      description: Current page
+    - in: query
+      name: limit
+      schema:
+        type: integer
+      description: Maximum number of elements on page
+    - in: query
+      name: name
+      schema:
+        type: string
+      description: Search by name
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              pagination:
+                $ref: "../../../openapi/schemas/pagination.yaml"
+              items:
+                type: array
+                uniqueItems: true
+                minItems: 0
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: Brand id
+                    name:
+                      type: string
+                      description: Brand name
+                    brand_images:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          description: image id
+                        image:
+                          type: string
+                          description: image
+
+          examples:
+            example:
+              value:
+                pagination:
+                  limit: 25
+                  total: 2
+                  current_page: 1
+                  total_pages: 1
+                items:
+                  - id: 1
+                    name: "Tesla"
+                    brand_images:
+                      id: 1
+                      image: "Tesla image"
+                  - id: 2
+                    name: "Mercedes-Benz"
+                    brand_images:
+                      id: 2
+                      image: "Mercedes-Benz image"

@@ -37,7 +37,7 @@ export const CarModel = (
                 updatedAt: 'updated_at',
                 scopes: {
                     list: {
-                        attributes: ['id', 'brand_id', 'name', 'description'],
+                        attributes: ['id', 'name', 'description'],
                     },
                 },
             }
@@ -58,6 +58,11 @@ export const CarModel = (
             sourceKey: 'id',
             foreignKey: 'car_model_id',
             as: 'model_generation',
+        })
+        model.hasOne(models.Brand, {
+            sourceKey: 'brand_id',
+            foreignKey: 'id',
+            as: 'model-brand',
         })
     }
 

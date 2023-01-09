@@ -12,6 +12,7 @@ class CarModelRoute implements Routes {
 
     private initializeRoutes() {
         this.router.get('/', this.carModelController.getList)
+        this.router.get('/:carModelId', this.carModelController.get)
     }
 }
 

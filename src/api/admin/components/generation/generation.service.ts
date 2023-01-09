@@ -25,6 +25,19 @@ class GenerationService extends BaseService {
             options
         )
     }
+
+    public async get(generationId: number): Promise<GenerationAttributes> {
+        return await this.models.Generation.scope('list').findOne({
+            where: { id: generationId },
+            include: [
+                {
+                    model: this.models.GenerationImage,
+                    as: 'generation_images',
+                    attributes: ['id', 'image'],
+                },
+            ],
+        })
+    }
 }
 
 export default GenerationService
