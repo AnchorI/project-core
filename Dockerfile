@@ -20,7 +20,7 @@ ENV POSTGRES_PASSWORD $DB_PASS
 ENV POSTGRES_DATABASE $DB_NAME
 ENV PORT $APP_PORT
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package.json .
 
@@ -29,4 +29,4 @@ RUN yarn install
 COPY . .
 
 EXPOSE $APP_PORT
-CMD ["node", "server.js"]
+CMD ["node", "src/server.ts"]
