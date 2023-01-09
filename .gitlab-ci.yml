@@ -17,8 +17,6 @@ eslint:
   script:
     - yarn install
     - ./node_modules/.bin/eslint ./src --ext .ts  --quiet
-  dependencies:
-    - deps:node
   cache:
     key: "backend-node"
     paths:
@@ -30,8 +28,6 @@ typescript:
   script:
     - yarn install
     - ./node_modules/.bin/tsc --project tsconfig.json --noEmit
-  dependencies:
-    - deps:node
   cache:
     key: "backend-node"
     paths:
