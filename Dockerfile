@@ -6,13 +6,10 @@ COPY . .
 RUN yarn install --frozen-lockfile
 
 # Rebuild the source code only when needed
-FROM node:`8` AS runner
+FROM node:18 AS runner
 WORKDIR /app
 
 RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nodecore
-
-COPY --chown=nextjs:nodejs --from=deps /app/node_modules ./node_modules
-COPY --chown=nextjs:nodejs . .
 
 RUN chown nodecore:nodejs /app
 
