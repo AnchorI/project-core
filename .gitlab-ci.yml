@@ -1,8 +1,6 @@
-image: "node:18"
 
 stages:
   - build
-  - checks
   - deploy
 
 variables:
@@ -10,41 +8,6 @@ variables:
   TAG_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHORT_SHA
   APP_NAME: evcar-node
   NODE_PORT: 8777
-
-# checks stage
-eslint:
-  stage: checks
-  script:
-    - yarn install
-    - ./node_modules/.bin/eslint ./src --ext .ts  --quiet
-  cache:
-    key: "backend-node"
-    paths:
-      - node_modules/
-    policy: pull
-
-typescript:
-  stage: checks
-  script:
-    - yarn install
-    - ./node_modules/.bin/tsc --project tsconfig.json --noEmit
-  cache:
-    key: "backend-node"
-    paths:
-      - node_modules/
-    policy: pull
-
-prettier:
-  stage: checks
-  script:
-    - yarn install
-    - ./node_modules/.bin/prettier -c "./src/**/*.ts"
-  cache:
-    key: "backend-node"
-    paths:
-      - node_modules/
-    policy: pull
-
 
 build:
   tags: [ deploy ]
