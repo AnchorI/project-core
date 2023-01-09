@@ -1,6 +1,5 @@
 # Install dependencies only when needed
 FROM node:18 AS deps
-RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY . .
 RUN yarn install --frozen-lockfile
