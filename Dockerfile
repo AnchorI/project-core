@@ -22,13 +22,10 @@ ENV PORT $APP_PORT
 
 WORKDIR /app
 
-COPY package.json .
-
-RUN yarn install
+EXPOSE $APP_PORT
 
 COPY . .
 
-RUN yarn server
+RUN yarn install
 
-EXPOSE $APP_PORT
-
+CMD ["yarn", "server"]
