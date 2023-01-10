@@ -30,4 +30,4 @@ RUN yarn server
 COPY . .
 
 EXPOSE $APP_PORT
-CMD ["node", "dist/server.js"]
+
