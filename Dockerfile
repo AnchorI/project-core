@@ -25,8 +25,9 @@ WORKDIR /app
 COPY package.json .
 
 RUN yarn install
+RUN yarn server
 
 COPY . .
 
 EXPOSE $APP_PORT
-CMD ["node", "src/server.ts"]
+CMD ["node", "dist/server.js"]
