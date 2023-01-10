@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Server side for evcar",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "tsc && cross-env NODE_ENV=development nodemon",
     "dev": "cross-env NODE_ENV=development nodemon",
