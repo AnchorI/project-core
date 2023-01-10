@@ -25,9 +25,10 @@ WORKDIR /app
 COPY package.json .
 
 RUN yarn install
-RUN yarn server
 
 COPY . .
+
+RUN yarn server
 
 EXPOSE $APP_PORT
 
