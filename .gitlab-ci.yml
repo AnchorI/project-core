@@ -1,4 +1,6 @@
 stages:
+  - prepare
+  - checks
   - build
   - deploy
 
@@ -8,6 +10,67 @@ variables:
   APP_NAME: evcar-node
   APP_PORT: ${PORT}
   NODE_PORT: 8181
+
+# prepare stage - install all deps
+deps:node:
+  stage: prepare
+  script:
+    - yarn install
+  cache:
+    key: "evcar-node"
+    paths:
+      - node_modules
+    policy: pull-push
+
+# checks stage
+eslint:
+  stage: checks
+  script:
+    - yarn install
+    - ./node_modules/.bin/eslint ./src --ext .ts  --quiet
+  dependencies:
+    - deps:node
+  cache:
+    key: "evcar-node"
+    paths:
+      - node_modules/
+    policy: pull
+
+typescript:
+  stage: checks
+  script:
+    - yarn install
+    - ./node_modules/.bin/tsc --project tsconfig.json --noEmit
+  dependencies:
+    - deps:node
+  cache:
+    key: "evcar-node"
+    paths:
+      - node_modules/
+    policy: pull
+
+prettier:
+  stage: checks
+  script:
+    - yarn install
+    - ./node_modules/.bin/prettier -c "./src/**/*.ts"
+  cache:
+    key: "evcar-node"
+    paths:
+      - node_modules/
+    policy: pull
+
+apidoc:
+  stage: checks
+  script:
+    - yarn install
+    - yarn apidoc lint
+  cache:
+    key: "evcar-node"
+    paths:
+      - node_modules/
+    policy: pull
+
 
 build:
   tags: [ deploy ]
