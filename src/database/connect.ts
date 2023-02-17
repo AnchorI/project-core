@@ -72,15 +72,6 @@ const DB: Db = {
     sequelize, // connection instance (RAW queries)
     models: {
         Brand: Models.Brand(sequelize, Sequelize.DataTypes),
-        BrandImage: Models.BrandImage(sequelize, Sequelize.DataTypes),
-        CarModel: Models.CarModel(sequelize, Sequelize.DataTypes),
-        CarModelImage: Models.CarModelImage(sequelize, Sequelize.DataTypes),
-        Equipment: Models.Equipment(sequelize, Sequelize.DataTypes),
-        EquipmentImage: Models.EquipmentImage(sequelize, Sequelize.DataTypes),
-        Generation: Models.Generation(sequelize, Sequelize.DataTypes),
-        GenerationImage: Models.GenerationImage(sequelize, Sequelize.DataTypes),
-        Store: Models.Store(sequelize, Sequelize.DataTypes),
-        VehiclePhoto: Models.VehiclePhoto(sequelize, Sequelize.DataTypes),
     },
 }
 

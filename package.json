@@ -1,7 +1,7 @@
 {
-  "name": "evcar-core",
+  "name": "project-core",
   "version": "1.0.0",
-  "description": "Server side for evcar",
+  "description": "Server core for any project",
   "main": "index.js",
   "scripts": {
     "start": "tsc && cross-env NODE_ENV=development nodemon",
@@ -19,7 +19,7 @@
   "keywords": [],
   "author": "AnchorI",
   "license": "ISC",
-  "repository": "https://git.aftermath.team/AnchorI/evcar-node",
+  "repository": "git@github.com:AnchorI/project-core.git",
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
     "@types/async": "^3.2.16",

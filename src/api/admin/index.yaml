@@ -17,12 +17,6 @@ paths:
     $ref: "./components/brand/docs/brand.yaml"
   /brand/{brandId}:
     $ref: "./components/brand/docs/brand-id.yaml"
-  /brand-image:
-    $ref: './components/brand-image/docs/brand-images.yaml'
-  /car-model:
-    $ref: "./components/car-model/docs/car-model.yaml"
-  /car-model/{carModelId}:
-    $ref: "./components/car-model/docs/car-model-id.yaml"
 
 components:
   securitySchemes:

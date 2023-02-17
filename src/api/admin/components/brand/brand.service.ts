@@ -17,13 +17,6 @@ class BrandService extends BaseService {
         const { name } = filters
         const options: FindAndCountOptions = {
             ...pagination,
-            include: [
-                {
-                    model: this.models.BrandImage,
-                    as: 'brand_images',
-                    attributes: ['id', 'image'],
-                },
-            ],
             where: {
                 ...(name && { name: { [Op.iLike]: `%${name}%` } }),
             },
@@ -36,13 +29,6 @@ class BrandService extends BaseService {
     public async get(brandId: number): Promise<BrandAttributes> {
         return await this.models.Brand.scope('list').findOne({
             where: { id: brandId },
-            include: [
-                {
-                    model: this.models.BrandImage,
-                    as: 'brand_images',
-                    attributes: ['id', 'image'],
-                },
-            ],
         })
     }
 }

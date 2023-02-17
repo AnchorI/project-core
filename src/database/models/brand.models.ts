@@ -36,21 +36,11 @@ export const Brand = (
         )
 
     model.associate = (models: Models) => {
-        model.hasMany(models.BrandImage, {
-            sourceKey: 'id',
-            foreignKey: 'brand_id',
-            as: 'brand_images',
-        })
-        model.hasMany(models.CarModel, {
-            sourceKey: 'id',
-            foreignKey: 'brand_id',
-            as: 'brand_car',
-        })
-        model.hasMany(models.Store, {
-            sourceKey: 'id',
-            foreignKey: 'brand',
-            as: 'brand_store',
-        })
+        // model.hasMany(models.BrandImage, {
+        //     sourceKey: 'id',
+        //     foreignKey: 'brand_id',
+        //     as: 'brand_images',
+        // })
     }
 
     return model
